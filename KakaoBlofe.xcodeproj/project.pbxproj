@@ -11,13 +11,15 @@
 		4024538A73627EE0490D1E6F /* Pods_KakaoBlofe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938611784C57D33168D83F15 /* Pods_KakaoBlofe.framework */; };
 		9B3F327FA8D6C2D617AACDD2 /* Pods_KakaoBlofe_KakaoBlofeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */; };
 		F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */; };
-		F2EC7EA426803BA300ADBF85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA326803BA300ADBF85 /* SceneDelegate.swift */; };
-		F2EC7EA626803BA300ADBF85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA526803BA300ADBF85 /* ViewController.swift */; };
-		F2EC7EA926803BA300ADBF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EA726803BA300ADBF85 /* Main.storyboard */; };
 		F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */; };
 		F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */; };
 		F2EC7EB926803BA600ADBF85 /* KakaoBlofeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EB826803BA600ADBF85 /* KakaoBlofeTests.swift */; };
 		F2EC7EC426803BA600ADBF85 /* KakaoBlofeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EC326803BA600ADBF85 /* KakaoBlofeUITests.swift */; };
+		F2EC7ED72680507100ADBF85 /* BlofeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7ED62680507100ADBF85 /* BlofeStep.swift */; };
+		F2EC7ED92680509C00ADBF85 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7ED82680509C00ADBF85 /* AppFlow.swift */; };
+		F2EC7EE726805E7400ADBF85 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */; };
+		F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */; };
+		F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +50,6 @@
 		E2C3116CB008265FB4294F60 /* Pods-KakaoBlofe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoBlofe.debug.xcconfig"; path = "Target Support Files/Pods-KakaoBlofe/Pods-KakaoBlofe.debug.xcconfig"; sourceTree = "<group>"; };
 		F2EC7E9E26803BA300ADBF85 /* KakaoBlofe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoBlofe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2EC7EA326803BA300ADBF85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2EC7EA526803BA300ADBF85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F2EC7EA826803BA300ADBF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2EC7EAD26803BA500ADBF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2EC7EAF26803BA500ADBF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +59,11 @@
 		F2EC7EBF26803BA600ADBF85 /* KakaoBlofeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KakaoBlofeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EC7EC326803BA600ADBF85 /* KakaoBlofeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoBlofeUITests.swift; sourceTree = "<group>"; };
 		F2EC7EC526803BA600ADBF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2EC7ED62680507100ADBF85 /* BlofeStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlofeStep.swift; sourceTree = "<group>"; };
+		F2EC7ED82680509C00ADBF85 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
+		F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoBlofe_KakaoBlofeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,13 +143,9 @@
 		F2EC7EA026803BA300ADBF85 /* KakaoBlofe */ = {
 			isa = PBXGroup;
 			children = (
-				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
-				F2EC7EA326803BA300ADBF85 /* SceneDelegate.swift */,
-				F2EC7EA526803BA300ADBF85 /* ViewController.swift */,
-				F2EC7EA726803BA300ADBF85 /* Main.storyboard */,
-				F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */,
-				F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */,
-				F2EC7EAF26803BA500ADBF85 /* Info.plist */,
+				F2EC7ED126804DAE00ADBF85 /* Source */,
+				F2EC7ED226804DC200ADBF85 /* Resource */,
+				F2EC7ED326804DCA00ADBF85 /* SupportFile */,
 			);
 			path = KakaoBlofe;
 			sourceTree = "<group>";
@@ -166,6 +166,60 @@
 				F2EC7EC526803BA600ADBF85 /* Info.plist */,
 			);
 			path = KakaoBlofeUITests;
+			sourceTree = "<group>";
+		};
+		F2EC7ED126804DAE00ADBF85 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
+				F2EC7ED42680503400ADBF85 /* Flow */,
+				F2EC7ED52680504200ADBF85 /* ViewController */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F2EC7ED226804DC200ADBF85 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */,
+				F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F2EC7ED326804DCA00ADBF85 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EAF26803BA500ADBF85 /* Info.plist */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		F2EC7ED42680503400ADBF85 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7ED62680507100ADBF85 /* BlofeStep.swift */,
+				F2EC7ED82680509C00ADBF85 /* AppFlow.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		F2EC7ED52680504200ADBF85 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */,
+				F2EC7EED268069BE00ADBF85 /* Home */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F2EC7EED268069BE00ADBF85 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */,
+				F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +333,6 @@
 			files = (
 				F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */,
 				F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */,
-				F2EC7EA926803BA300ADBF85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,9 +477,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2EC7EA626803BA300ADBF85 /* ViewController.swift in Sources */,
+				F2EC7EE726805E7400ADBF85 /* HomeViewReactor.swift in Sources */,
+				F2EC7ED92680509C00ADBF85 /* AppFlow.swift in Sources */,
 				F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */,
-				F2EC7EA426803BA300ADBF85 /* SceneDelegate.swift in Sources */,
+				F2EC7ED72680507100ADBF85 /* BlofeStep.swift in Sources */,
+				F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */,
+				F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,14 +518,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F2EC7EA726803BA300ADBF85 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F2EC7EA826803BA300ADBF85 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -532,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -587,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -606,7 +654,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75FNRKTJ9S;
-				INFOPLIST_FILE = KakaoBlofe/Info.plist;
+				INFOPLIST_FILE = KakaoBlofe/SupportFile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,7 +663,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.medium.devminseok.KakaoBlofe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -627,7 +676,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75FNRKTJ9S;
-				INFOPLIST_FILE = KakaoBlofe/Info.plist;
+				INFOPLIST_FILE = KakaoBlofe/SupportFile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,7 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.medium.devminseok.KakaoBlofe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
