@@ -20,6 +20,17 @@
 		F2EC7EE726805E7400ADBF85 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */; };
 		F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */; };
 		F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */; };
+		F2EC7EF226806BD500ADBF85 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF126806BD500ADBF85 /* RequestLoggingPlugin.swift */; };
+		F2EC7EF426806BF300ADBF85 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF326806BF300ADBF85 /* BaseAPI.swift */; };
+		F2EC7EF626806C0B00ADBF85 /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF526806C0B00ADBF85 /* KakaoAPI.swift */; };
+		F2EC7EF926806F3F00ADBF85 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF826806F3F00ADBF85 /* SearchService.swift */; };
+		F2EC7EFB26806F7900ADBF85 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFA26806F7900ADBF85 /* Network.swift */; };
+		F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFC26806FE500ADBF85 /* HandleResponse.swift */; };
+		F2EC7F002680705300ADBF85 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */; };
+		F2EC7F022680716000ADBF85 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F012680716000ADBF85 /* List.swift */; };
+		F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F032680723F00ADBF85 /* Meta.swift */; };
+		F2EC7F06268072E800ADBF85 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F05268072E800ADBF85 /* Cafe.swift */; };
+		F2EC7F082680730D00ADBF85 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F072680730D00ADBF85 /* Blog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +75,17 @@
 		F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F2EC7EF126806BD500ADBF85 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
+		F2EC7EF326806BF300ADBF85 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		F2EC7EF526806C0B00ADBF85 /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
+		F2EC7EF826806F3F00ADBF85 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		F2EC7EFA26806F7900ADBF85 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F2EC7EFC26806FE500ADBF85 /* HandleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponse.swift; sourceTree = "<group>"; };
+		F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		F2EC7F012680716000ADBF85 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		F2EC7F032680723F00ADBF85 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		F2EC7F05268072E800ADBF85 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		F2EC7F072680730D00ADBF85 /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoBlofe_KakaoBlofeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,9 +193,12 @@
 		F2EC7ED126804DAE00ADBF85 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F2EC7EFE2680704D00ADBF85 /* Model */,
 				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
 				F2EC7ED42680503400ADBF85 /* Flow */,
 				F2EC7ED52680504200ADBF85 /* ViewController */,
+				F2EC7EF726806F1500ADBF85 /* Service */,
+				F2EC7EEE26806B8B00ADBF85 /* Network */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -220,6 +245,54 @@
 				F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F2EC7EEE26806B8B00ADBF85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EFC26806FE500ADBF85 /* HandleResponse.swift */,
+				F2EC7EFA26806F7900ADBF85 /* Network.swift */,
+				F2EC7EEF26806B9500ADBF85 /* API */,
+				F2EC7EF026806BB900ADBF85 /* Plugin */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F2EC7EEF26806B9500ADBF85 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EF326806BF300ADBF85 /* BaseAPI.swift */,
+				F2EC7EF526806C0B00ADBF85 /* KakaoAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F2EC7EF026806BB900ADBF85 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EF126806BD500ADBF85 /* RequestLoggingPlugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		F2EC7EF726806F1500ADBF85 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EF826806F3F00ADBF85 /* SearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F2EC7EFE2680704D00ADBF85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */,
+				F2EC7F012680716000ADBF85 /* List.swift */,
+				F2EC7F032680723F00ADBF85 /* Meta.swift */,
+				F2EC7F05268072E800ADBF85 /* Cafe.swift */,
+				F2EC7F072680730D00ADBF85 /* Blog.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,8 +554,19 @@
 				F2EC7ED92680509C00ADBF85 /* AppFlow.swift in Sources */,
 				F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */,
 				F2EC7ED72680507100ADBF85 /* BlofeStep.swift in Sources */,
+				F2EC7F06268072E800ADBF85 /* Cafe.swift in Sources */,
+				F2EC7EF226806BD500ADBF85 /* RequestLoggingPlugin.swift in Sources */,
+				F2EC7EFB26806F7900ADBF85 /* Network.swift in Sources */,
+				F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */,
+				F2EC7F082680730D00ADBF85 /* Blog.swift in Sources */,
+				F2EC7EF426806BF300ADBF85 /* BaseAPI.swift in Sources */,
+				F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */,
+				F2EC7EF626806C0B00ADBF85 /* KakaoAPI.swift in Sources */,
+				F2EC7F022680716000ADBF85 /* List.swift in Sources */,
+				F2EC7EF926806F3F00ADBF85 /* SearchService.swift in Sources */,
 				F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */,
 				F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */,
+				F2EC7F002680705300ADBF85 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
