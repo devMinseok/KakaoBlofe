@@ -31,7 +31,7 @@ extension KakaoAPI: BaseAPI {
     }
     
     var headers: [String : String]? {
-        return nil
+        ["Authorization": "KakaoAK 748e5d544b7c32a9b2b1a4b1a515edd6"]
     }
     
     var parameters: [String: Any]? {

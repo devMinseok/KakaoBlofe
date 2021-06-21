@@ -11,12 +11,17 @@ import RxSwift
 import RxCocoa
 
 final class AppFlow: Flow {
+    private let searchService: SearchServiceType
     
     var root: Presentable {
         return self.rootViewController
     }
     
     private lazy var rootViewController = UINavigationController()
+    
+    init(searchService: SearchServiceType) {
+        self.searchService = searchService
+    }
     
     deinit {
         print("❎ \(type(of: self)): \(#function)")
@@ -30,7 +35,6 @@ final class AppFlow: Flow {
             return navigateToHome()
         }
     }
-    
 }
 
 // MARK: - Navigate Code

@@ -12,13 +12,13 @@ enum SortType {
     case recency
 }
 
-protocol SearchServiceProtocol {
+protocol SearchServiceType {
     func searchBlog(query: String,sort: SortType , page: Int, size: Int) -> Single<List<Blog>>
     
     func searchCafe(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Cafe>>
 }
 
-final class SearchService: SearchServiceProtocol {
+final class SearchService: SearchServiceType {
     private let network: Network<KakaoAPI>
     
     init(network: Network<KakaoAPI>) {

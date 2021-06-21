@@ -193,10 +193,10 @@
 		F2EC7ED126804DAE00ADBF85 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F2EC7EFE2680704D00ADBF85 /* Model */,
 				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
 				F2EC7ED42680503400ADBF85 /* Flow */,
 				F2EC7ED52680504200ADBF85 /* ViewController */,
+				F2EC7EFE2680704D00ADBF85 /* Model */,
 				F2EC7EF726806F1500ADBF85 /* Service */,
 				F2EC7EEE26806B8B00ADBF85 /* Network */,
 			);
