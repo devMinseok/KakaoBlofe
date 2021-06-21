@@ -10,7 +10,7 @@ import Moya
 protocol BaseAPI: TargetType { }
 
 extension BaseAPI {
-    var baseURL: URL { URL(string: "https://dapi.kakao.com") }
+    var baseURL: URL { URL(string: "https://dapi.kakao.com")! }
     
     var method: Method { .get }
     
