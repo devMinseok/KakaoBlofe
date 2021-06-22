@@ -15,7 +15,7 @@ final class PostCell: BaseTableViewCell, View {
     struct Font {
         static let kindLabel = UIFont.systemFont(ofSize: 20, weight: .black)
         static let nameLabel = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        static let titleLabel = UIFont.systemFont(ofSize: 18, weight: .regular)
+        static let titleLabel = UIFont.systemFont(ofSize: 17, weight: .regular)
         static let dateLabel = UIFont.systemFont(ofSize: 15, weight: .medium)
     }
     
@@ -39,7 +39,6 @@ final class PostCell: BaseTableViewCell, View {
     }
     
     let titleLabel = UILabel().then {
-        $0.font = Font.titleLabel
         $0.numberOfLines = 2
     }
     
@@ -97,7 +96,7 @@ final class PostCell: BaseTableViewCell, View {
         
         // MARK: - state
         reactor.state.map { $0.thumbnail }
-            .bind(to: self.thumbnail.rx.image())
+            .bind(to: self.thumbnail.rx.image(placeholder: UIImage(named: "placeholder")))
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.name }
@@ -105,12 +104,13 @@ final class PostCell: BaseTableViewCell, View {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.title }
-            .bind(to: self.titleLabel.rx.text)
+            .map { $0.htmlToAttributedString(font: Font.titleLabel) }
+            .bind(to: self.titleLabel.rx.attributedText)
             .disposed(by: disposeBag)
         
-//        reactor.state.map { $0.isWebPageRead }
-//            .bind(to: self.overlay.rx.isHidden)
-//            .disposed(by: disposeBag)
+        //        reactor.state.map { $0.isWebPageRead }
+        //            .bind(to: self.overlay.rx.isHidden)
+        //            .disposed(by: disposeBag)
         
         reactor.state.map { $0.date }
             .subscribe(onNext: { [weak self] date in
