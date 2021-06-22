@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct List<T: Codable>: Codable {
-    var documents: [T]
+struct List: Codable {
+    var documents: [Post]
     var meta: Meta
     
     enum CodingKeys: String, CodingKey {

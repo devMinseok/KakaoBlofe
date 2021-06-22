@@ -14,17 +14,17 @@ final class PostCell: BaseTableViewCell, View {
     
     struct Font {
         static let kindLabel = UIFont.systemFont(ofSize: 20, weight: .black)
-        static let nameLabel = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        static let nameLabel = UIFont.systemFont(ofSize: 20, weight: .medium)
         static let titleLabel = UIFont.systemFont(ofSize: 17, weight: .regular)
         static let dateLabel = UIFont.systemFont(ofSize: 15, weight: .medium)
     }
     
     struct Metric {
-        static let cellPadding = 15
-        static let thumbnailSize = 100
-        static let kindLabelWidth = 20
-        static let nameLabelLeft = 5
-        static let titleLabelTop = 5
+        static let cellPadding = 15.f
+        static let thumbnailSize = 100.f
+        static let kindLabelWidth = 20.f
+        static let nameLabelLeft = 5.f
+        static let titleLabelTop = 5.f
     }
     
     let thumbnail = UIImageView()
@@ -104,7 +104,7 @@ final class PostCell: BaseTableViewCell, View {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.title }
-            .map { $0.htmlToAttributedString(font: Font.titleLabel) }
+            .map { $0.htmlToAttributedString(font: Font.titleLabel, color: .darkGray) }
             .bind(to: self.titleLabel.rx.attributedText)
             .disposed(by: disposeBag)
         

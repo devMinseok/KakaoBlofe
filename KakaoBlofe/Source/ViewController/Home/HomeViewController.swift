@@ -23,17 +23,19 @@ final class HomeViewController: BaseViewController, View {
     }
     
     struct Metric {
-        
+        static let tableViewCellHeight = 130.f
     }
     
     struct Font {
         
     }
-
+    
     // MARK: - Properties
     fileprivate let dataSource: RxTableViewSectionedReloadDataSource<HomeViewSection>
-
+    
     // MARK: - UI
+    let refreshControl = RefreshControl()
+    
     let searchField = UISearchBar().then {
         $0.placeholder = "검색하기"
     }
@@ -45,6 +47,7 @@ final class HomeViewController: BaseViewController, View {
         style: .plain
     ).then {
         $0.register(Reusable.postCell)
+        $0.refreshControl = self.refreshControl
     }
     
     static func dataSourceFactory() -> RxTableViewSectionedReloadDataSource<HomeViewSection> {
@@ -59,7 +62,7 @@ final class HomeViewController: BaseViewController, View {
             }
         )
     }
-
+    
     // MARK: - Initializing
     init(
         reactor: Reactor
@@ -68,11 +71,11 @@ final class HomeViewController: BaseViewController, View {
         self.dataSource = Self.dataSourceFactory()
         super.init()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +87,7 @@ final class HomeViewController: BaseViewController, View {
         self.navigationItem.titleView = searchField
         self.navigationItem.rightBarButtonItem = searchButton
     }
-
+    
     override func setupConstraints() {
         super.setupConstraints()
         
@@ -92,7 +95,7 @@ final class HomeViewController: BaseViewController, View {
             make.edges.equalToSuperview()
         }
     }
-
+    
     // MARK: - Configuring
     func bind(reactor: Reactor) {
         // MARK: - action
@@ -101,22 +104,56 @@ final class HomeViewController: BaseViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        self.refreshControl.rx.controlEvent(.valueChanged)
+            .map { Reactor.Action.refresh }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
+        self.tableView.rx.isReachedBottom
+            .map { Reactor.Action.loadMore }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         // MARK: - state
         reactor.state.map { $0.section }
             .bind(to: self.tableView.rx.items(dataSource: self.dataSource))
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.isLoading }
+            .bind(to: self.activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isRefreshing }
+            .bind(to: self.refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        reactor.error
+            .subscribe(onNext: { error in
+                print(error?.message)
+            })
+            .disposed(by: disposeBag)
+        
         // MARK: - view
         self.tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
+        self.tableView.rx.itemSelected
+            .bind(to: self.tableView.rx.deselectRow)
+            .disposed(by: disposeBag)
+        
+        self.tableView.rx.itemSelected(dataSource: self.dataSource)
+            .subscribe(onNext: { section in
+                switch section {
+                case let .postItem(cellReactor):
+                    reactor.action.onNext(Reactor.Action.postSelected(cellReactor.post))
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return Metric.tableViewCellHeight
     }
 }

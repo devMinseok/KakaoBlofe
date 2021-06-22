@@ -8,8 +8,8 @@
 import Moya
 
 enum KakaoAPI {
-    case searchBlog(_ query: String, _ sort: String, _ page: Int, _ size: Int)
-    case searchCafe(_ query: String, _ sort: String, _ page: Int, _ size: Int)
+    case searchBlog(_ query: String, _ page: Int, _ size: Int)
+    case searchCafe(_ query: String, _ page: Int, _ size: Int)
 }
 
 extension KakaoAPI: BaseAPI {
@@ -36,18 +36,16 @@ extension KakaoAPI: BaseAPI {
     
     var parameters: [String: Any]? {
         switch self {
-        case let .searchBlog(query, sort, page, size):
+        case let .searchBlog(query, page, size):
             return [
                 "query": query,
-                "sort": sort,
                 "page": page,
                 "size": size
             ]
             
-        case let .searchCafe(query, sort, page, size):
+        case let .searchCafe(query, page, size):
             return [
                 "query": query,
-                "sort": sort,
                 "page": page,
                 "size": size
             ]
