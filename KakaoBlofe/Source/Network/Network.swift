@@ -26,7 +26,7 @@ class Network<API: TargetType>: MoyaProvider<API> {
 extension Network {
     func requestObject<T: Codable>(_ target: API, type: T.Type) -> Single<T> {
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
         return request(target)
             .map(T.self, using: decoder)
     }

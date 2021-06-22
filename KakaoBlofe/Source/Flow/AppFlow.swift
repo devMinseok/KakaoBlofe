@@ -40,7 +40,7 @@ final class AppFlow: Flow {
 // MARK: - Navigate Code
 extension AppFlow {
     private func navigateToHome() -> FlowContributors {
-        let reactor = HomeViewReactor()
+        let reactor = HomeViewReactor(searchService: self.searchService)
         let viewController = HomeViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: false)

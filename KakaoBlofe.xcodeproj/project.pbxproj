@@ -29,8 +29,13 @@
 		F2EC7F002680705300ADBF85 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */; };
 		F2EC7F022680716000ADBF85 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F012680716000ADBF85 /* List.swift */; };
 		F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F032680723F00ADBF85 /* Meta.swift */; };
-		F2EC7F06268072E800ADBF85 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F05268072E800ADBF85 /* Cafe.swift */; };
-		F2EC7F082680730D00ADBF85 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F072680730D00ADBF85 /* Blog.swift */; };
+		F2EC7F082680730D00ADBF85 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F072680730D00ADBF85 /* Post.swift */; };
+		F2EC7F0C2680D17800ADBF85 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0B2680D17800ADBF85 /* PostCell.swift */; };
+		F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */; };
+		F2EC7F102680D22300ADBF85 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */; };
+		F2EC7F132680E0F300ADBF85 /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */; };
+		F2EC7F162680EC6F00ADBF85 /* HomeViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F152680EC6F00ADBF85 /* HomeViewSection.swift */; };
+		F2EC7F1826814EF000ADBF85 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +89,13 @@
 		F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		F2EC7F012680716000ADBF85 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		F2EC7F032680723F00ADBF85 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
-		F2EC7F05268072E800ADBF85 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
-		F2EC7F072680730D00ADBF85 /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
+		F2EC7F072680730D00ADBF85 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F2EC7F0B2680D17800ADBF85 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellReactor.swift; sourceTree = "<group>"; };
+		F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Rx.swift"; sourceTree = "<group>"; };
+		F2EC7F152680EC6F00ADBF85 /* HomeViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSection.swift; sourceTree = "<group>"; };
+		F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoBlofe_KakaoBlofeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,10 +205,13 @@
 			children = (
 				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
 				F2EC7ED42680503400ADBF85 /* Flow */,
+				F2EC7F142680EC5800ADBF85 /* Section */,
 				F2EC7ED52680504200ADBF85 /* ViewController */,
 				F2EC7EFE2680704D00ADBF85 /* Model */,
+				F2EC7F092680D12A00ADBF85 /* View */,
 				F2EC7EF726806F1500ADBF85 /* Service */,
 				F2EC7EEE26806B8B00ADBF85 /* Network */,
+				F2EC7F112680E09D00ADBF85 /* Utill */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -289,10 +302,44 @@
 				F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */,
 				F2EC7F012680716000ADBF85 /* List.swift */,
 				F2EC7F032680723F00ADBF85 /* Meta.swift */,
-				F2EC7F05268072E800ADBF85 /* Cafe.swift */,
-				F2EC7F072680730D00ADBF85 /* Blog.swift */,
+				F2EC7F072680730D00ADBF85 /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F2EC7F092680D12A00ADBF85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7F0A2680D14800ADBF85 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2EC7F0A2680D14800ADBF85 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */,
+				F2EC7F0B2680D17800ADBF85 /* PostCell.swift */,
+				F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2EC7F112680E09D00ADBF85 /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */,
+				F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */,
+			);
+			path = Utill;
+			sourceTree = "<group>";
+		};
+		F2EC7F142680EC5800ADBF85 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7F152680EC6F00ADBF85 /* HomeViewSection.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,16 +601,21 @@
 				F2EC7ED92680509C00ADBF85 /* AppFlow.swift in Sources */,
 				F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */,
 				F2EC7ED72680507100ADBF85 /* BlofeStep.swift in Sources */,
-				F2EC7F06268072E800ADBF85 /* Cafe.swift in Sources */,
+				F2EC7F0C2680D17800ADBF85 /* PostCell.swift in Sources */,
 				F2EC7EF226806BD500ADBF85 /* RequestLoggingPlugin.swift in Sources */,
 				F2EC7EFB26806F7900ADBF85 /* Network.swift in Sources */,
+				F2EC7F102680D22300ADBF85 /* BaseTableViewCell.swift in Sources */,
+				F2EC7F132680E0F300ADBF85 /* UIImageView+Rx.swift in Sources */,
 				F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */,
-				F2EC7F082680730D00ADBF85 /* Blog.swift in Sources */,
+				F2EC7F082680730D00ADBF85 /* Post.swift in Sources */,
+				F2EC7F162680EC6F00ADBF85 /* HomeViewSection.swift in Sources */,
 				F2EC7EF426806BF300ADBF85 /* BaseAPI.swift in Sources */,
 				F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */,
 				F2EC7EF626806C0B00ADBF85 /* KakaoAPI.swift in Sources */,
 				F2EC7F022680716000ADBF85 /* List.swift in Sources */,
+				F2EC7F1826814EF000ADBF85 /* DateFormatter.swift in Sources */,
 				F2EC7EF926806F3F00ADBF85 /* SearchService.swift in Sources */,
+				F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */,
 				F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */,
 				F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */,
 				F2EC7F002680705300ADBF85 /* ErrorResponse.swift in Sources */,

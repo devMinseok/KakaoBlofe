@@ -13,9 +13,9 @@ enum SortType {
 }
 
 protocol SearchServiceType {
-    func searchBlog(query: String,sort: SortType , page: Int, size: Int) -> Single<List<Blog>>
+    func searchBlog(query: String,sort: SortType , page: Int, size: Int) -> Single<List<Post>>
     
-    func searchCafe(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Cafe>>
+    func searchCafe(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Post>>
 }
 
 final class SearchService: SearchServiceType {
@@ -25,7 +25,7 @@ final class SearchService: SearchServiceType {
         self.network = network
     }
     
-    func searchBlog(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Blog>> {
+    func searchBlog(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Post>> {
         var sortType = ""
         switch sort {
         case .accuracy:
@@ -34,10 +34,10 @@ final class SearchService: SearchServiceType {
             sortType = "recency"
         }
 
-        return self.network.requestObject(.searchBlog(query, sortType, page, size), type: List<Blog>.self)
+        return self.network.requestObject(.searchBlog(query, sortType, page, size), type: List<Post>.self)
     }
     
-    func searchCafe(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Cafe>> {
+    func searchCafe(query: String, sort: SortType, page: Int, size: Int) -> Single<List<Post>> {
         var sortType = ""
         switch sort {
         case .accuracy:
@@ -46,6 +46,6 @@ final class SearchService: SearchServiceType {
             sortType = "recency"
         }
 
-        return self.network.requestObject(.searchCafe(query, sortType, page, size), type: List<Cafe>.self)
+        return self.network.requestObject(.searchCafe(query, sortType, page, size), type: List<Post>.self)
     }
 }
