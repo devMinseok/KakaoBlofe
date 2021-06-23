@@ -12,7 +12,7 @@ enum PostKind {
     case cafe
 }
 
-struct Post: Codable {
+struct Post: Codable, Equatable {
     var cafeName: String?
     var blogName: String?
     var contents: String

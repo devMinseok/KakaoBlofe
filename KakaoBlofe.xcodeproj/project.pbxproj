@@ -13,6 +13,7 @@
 		F27B4CB4268249B300DA557E /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB3268249B300DA557E /* ServiceProvider.swift */; };
 		F27B4CB626824B2700DA557E /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB526824B2700DA557E /* UserDefaultService.swift */; };
 		F27B4CB826824F8100DA557E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB726824F8100DA557E /* BaseService.swift */; };
+		F27B4CBA2683129500DA557E /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB92683129500DA557E /* FilterHeaderView.swift */; };
 		F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */; };
 		F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */; };
 		F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */; };
@@ -37,7 +38,6 @@
 		F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */; };
 		F2EC7F102680D22300ADBF85 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */; };
 		F2EC7F132680E0F300ADBF85 /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */; };
-		F2EC7F162680EC6F00ADBF85 /* HomeViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F152680EC6F00ADBF85 /* HomeViewSection.swift */; };
 		F2EC7F1826814EF000ADBF85 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */; };
 		F2EC7F1A26816F6800ADBF85 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1926816F6800ADBF85 /* String.swift */; };
 		F2EC7F1C268177FB00ADBF85 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1B268177FB00ADBF85 /* UITableView+Rx.swift */; };
@@ -76,6 +76,7 @@
 		F27B4CB3268249B300DA557E /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		F27B4CB526824B2700DA557E /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		F27B4CB726824F8100DA557E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		F27B4CB92683129500DA557E /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		F2EC7E9E26803BA300ADBF85 /* KakaoBlofe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoBlofe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellReactor.swift; sourceTree = "<group>"; };
 		F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Rx.swift"; sourceTree = "<group>"; };
-		F2EC7F152680EC6F00ADBF85 /* HomeViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSection.swift; sourceTree = "<group>"; };
 		F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		F2EC7F1926816F6800ADBF85 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F2EC7F1B268177FB00ADBF85 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
@@ -223,7 +223,6 @@
 			children = (
 				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
 				F2EC7ED42680503400ADBF85 /* Flow */,
-				F2EC7F142680EC5800ADBF85 /* Section */,
 				F2EC7ED52680504200ADBF85 /* ViewController */,
 				F2EC7EFE2680704D00ADBF85 /* Model */,
 				F2EC7F092680D12A00ADBF85 /* View */,
@@ -331,6 +330,7 @@
 		F2EC7F092680D12A00ADBF85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F27B4CB92683129500DA557E /* FilterHeaderView.swift */,
 				F2EC7F1F26817E6600ADBF85 /* RefreshControl.swift */,
 				F2EC7F0A2680D14800ADBF85 /* Cell */,
 			);
@@ -359,14 +359,6 @@
 				F2EC7F1D2681796800ADBF85 /* CGFloatLiteral.swift */,
 			);
 			path = Utill;
-			sourceTree = "<group>";
-		};
-		F2EC7F142680EC5800ADBF85 /* Section */ = {
-			isa = PBXGroup;
-			children = (
-				F2EC7F152680EC6F00ADBF85 /* HomeViewSection.swift */,
-			);
-			path = Section;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -640,7 +632,6 @@
 				F2EC7F1E2681796800ADBF85 /* CGFloatLiteral.swift in Sources */,
 				F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */,
 				F2EC7F082680730D00ADBF85 /* Post.swift in Sources */,
-				F2EC7F162680EC6F00ADBF85 /* HomeViewSection.swift in Sources */,
 				F2EC7EF426806BF300ADBF85 /* BaseAPI.swift in Sources */,
 				F27B4CB4268249B300DA557E /* ServiceProvider.swift in Sources */,
 				F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */,
@@ -651,6 +642,7 @@
 				F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */,
 				F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */,
 				F27B4CB826824F8100DA557E /* BaseService.swift in Sources */,
+				F27B4CBA2683129500DA557E /* FilterHeaderView.swift in Sources */,
 				F2EC7F1C268177FB00ADBF85 /* UITableView+Rx.swift in Sources */,
 				F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */,
 				F27B4CB626824B2700DA557E /* UserDefaultService.swift in Sources */,

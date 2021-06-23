@@ -33,7 +33,6 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     }
     
     // MARK: - Properties
-    fileprivate let dataSource: RxTableViewSectionedReloadDataSource<HomeViewSection>
     
     // MARK: - UI
     let searchDropDown = DropDown()
@@ -48,6 +47,8 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     
     let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: nil, action: nil)
     
+    let tableViewHeader = FilterHeaderView(frame: CGRect(x: 0, y: 0, width: .zero, height: 50))
+    
     lazy var tableView = UITableView(
         frame: .zero,
         style: .plain
@@ -56,25 +57,11 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         $0.refreshControl = self.refreshControl
     }
     
-    static func dataSourceFactory() -> RxTableViewSectionedReloadDataSource<HomeViewSection> {
-        return .init(
-            configureCell: { dataSource, tableView, indexPath, sectionItem in
-                let cell = tableView.dequeue(Reusable.postCell, for: indexPath)
-                switch sectionItem {
-                case let .postItem(reactor):
-                    cell.reactor = reactor
-                    return cell
-                }
-            }
-        )
-    }
-    
     // MARK: - Initializing
     init(
         reactor: Reactor
     ) {
         defer { self.reactor = reactor }
-        self.dataSource = Self.dataSourceFactory()
         super.init()
     }
     
@@ -86,6 +73,8 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     override func viewDidLoad() {
         self.view.addSubview(self.tableView)
         super.viewDidLoad()
+        
+        self.tableView.tableHeaderView = self.tableViewHeader
         
         self.navigationItem.titleView = searchField
         self.navigationItem.rightBarButtonItem = searchButton
@@ -105,7 +94,7 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     
     // MARK: - Configuring
     func bind(reactor: Reactor) {
-        // MARK: - action
+        // MARK: - Action
         self.rx.viewDidLoad
             .map { _ in Reactor.Action.loadSearchHistory }
             .bind(to: reactor.action)
@@ -126,12 +115,20 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        self.searchButton.rx.tap
+        let searchButtonTap = self.searchButton.rx.tap
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .share()
+        
+        searchButtonTap
             .map { [weak self] _ in
                 self?.searchField.resignFirstResponder()
                 return Reactor.Action.refresh
             }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        searchButtonTap
+            .map { Reactor.Action.updateSearchHistory }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -140,14 +137,51 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             self.searchField.resignFirstResponder()
             
             self.searchField.text = item
-            self.reactor?.action.onNext(.updateSearchWord(item))
-            self.reactor?.action.onNext(.refresh)
+            reactor.action.onNext(.updateSearchWord(item))
+            reactor.action.onNext(.refresh)
+            reactor.action.onNext(.updateSearchHistory)
         }
         
-        // MARK: - state
-        reactor.state.map { $0.section }
+        self.tableView.rx.modelSelected(Post.self)
+            .subscribe(onNext: { model in
+                reactor.action.onNext(Reactor.Action.postSelected(model))
+            })
+            .disposed(by: disposeBag)
+        
+        self.tableViewHeader.sortButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                var titleStyle = UIAlertAction.Style.default
+                var dateTimeStyle = UIAlertAction.Style.default
+                
+                switch reactor.currentState.sortType {
+                case .recency: dateTimeStyle = .destructive
+                case .titleAsc: titleStyle = .destructive
+                }
+                
+                let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                let titleAction = UIAlertAction(title: "Title", style: titleStyle) { _ in
+                    reactor.action.onNext(.updateSort(.titleAsc))
+                    reactor.action.onNext(.refresh)
+                }
+                let dateTimeAction = UIAlertAction(title: "Datetime", style: dateTimeStyle) { _ in
+                    reactor.action.onNext(.updateSort(.recency))
+                    reactor.action.onNext(.refresh)
+                }
+                let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+                
+                [titleAction, dateTimeAction, cancelAction].forEach(actionSheet.addAction)
+                self?.present(actionSheet, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        // MARK: - State
+        reactor.state.map { $0.items }
             .distinctUntilChanged()
-            .bind(to: self.tableView.rx.items(dataSource: self.dataSource))
+            .bind(to: self.tableView.rx.items) { tableView, index, element in
+                guard let cell = tableView.dequeue(Reusable.postCell) else { return UITableViewCell() }
+                cell.reactor = PostCellReactor(post: element)
+                return cell
+            }
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.query }
@@ -182,21 +216,12 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             })
             .disposed(by: disposeBag)
         
-        // MARK: - view
+        // MARK: - View
         self.tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
         self.tableView.rx.itemSelected
             .bind(to: self.tableView.rx.deselectRow)
-            .disposed(by: disposeBag)
-        
-        self.tableView.rx.itemSelected(dataSource: self.dataSource)
-            .subscribe(onNext: { section in
-                switch section {
-                case let .postItem(cellReactor):
-                    reactor.action.onNext(Reactor.Action.postSelected(cellReactor.post))
-                }
-            })
             .disposed(by: disposeBag)
         
         self.searchField.rx.tapGesture()

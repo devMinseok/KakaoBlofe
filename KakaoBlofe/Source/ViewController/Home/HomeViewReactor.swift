@@ -10,6 +10,17 @@ import RxCocoa
 import RxSwift
 import RxFlow
 
+enum SortType {
+    case titleAsc
+    case recency
+}
+
+enum FilterType {
+    case cafe
+    case blog
+    case all
+}
+
 final class HomeViewReactor: Reactor, Stepper {
 
     var steps = PublishRelay<Step>()
@@ -20,6 +31,8 @@ final class HomeViewReactor: Reactor, Stepper {
         case postSelected(Post)
         case updateSearchWord(String)
         case loadSearchHistory
+        case updateSort(SortType)
+        case updateSearchHistory
     }
 
     enum Mutation {
@@ -30,10 +43,11 @@ final class HomeViewReactor: Reactor, Stepper {
         case setSearchWord(String)
         case setSearchHistories([String])
         case setSearchHistory(String)
+        case setSortType(SortType)
     }
 
     struct State {
-        var section: [HomeViewSection] = [.postSection([])]
+        var items: [Post] = []
         
         var query: String = ""
         var page: Int = 0
@@ -65,12 +79,10 @@ final class HomeViewReactor: Reactor, Stepper {
             
             let startRefreshing = Observable.just(Mutation.setRefreshing(true))
             let stopRefreshing = Observable.just(Mutation.setRefreshing(false))
-            let searchHistory = Observable.just(Mutation.setSearchHistory(self.currentState.query))
             
             let search = self.provider.searchService.searchPost(
                 query: self.currentState.query,
                 filter: self.currentState.filterType,
-                sort: self.currentState.sortType,
                 page: 1,
                 size: 25
             )
@@ -83,7 +95,7 @@ final class HomeViewReactor: Reactor, Stepper {
                 return .empty()
             }
             
-            return .concat([startRefreshing, search, stopRefreshing, searchHistory])
+            return .concat([startRefreshing, search, stopRefreshing])
             
         case .loadMore:
             if self.currentState.isRefreshing { return .empty() }
@@ -96,7 +108,6 @@ final class HomeViewReactor: Reactor, Stepper {
             let search = self.provider.searchService.searchPost(
                 query: self.currentState.query,
                 filter: self.currentState.filterType,
-                sort: self.currentState.sortType,
                 page: self.currentState.page,
                 size: 25
             )
@@ -123,6 +134,12 @@ final class HomeViewReactor: Reactor, Stepper {
                 .map { histories -> Mutation in
                     Mutation.setSearchHistories(histories)
                 }
+            
+        case let .updateSort(sortType):
+            return .just(.setSortType(sortType))
+            
+        case .updateSearchHistory:
+            return .just(Mutation.setSearchHistory(self.currentState.query))
         }
     }
 
@@ -138,15 +155,28 @@ final class HomeViewReactor: Reactor, Stepper {
             
         case let .setPosts(posts):
             state.isPageEnd = false
-            let sectionItems = self.postSectionItems(with: posts)
-            state.section = [.postSection(sectionItems)]
             state.page = 2
+            
+            switch state.sortType {
+            case .recency:
+                state.items = posts.sorted(by: { $0.dateTime > $1.dateTime })
+                
+            case .titleAsc:
+                state.items = posts.sorted(by: { $0.title < $1.title })
+            }
             
         case let .appendPosts(posts, isEnd):
             state.isPageEnd = isEnd
-            let sectionItems = state.section[0].items + self.postSectionItems(with: posts)
-            state.section = [.postSection(sectionItems)]
             state.page += 1
+            let result = state.items + posts
+            
+            switch state.sortType {
+            case .recency:
+                state.items = result.sorted(by: { $0.dateTime > $1.dateTime })
+                
+            case .titleAsc:
+                state.items = result.sorted(by: { $0.title < $1.title })
+            }
             
         case let .setSearchWord(keyword):
             state.query = keyword
@@ -164,18 +194,11 @@ final class HomeViewReactor: Reactor, Stepper {
             }
             
             self.provider.searchService.setSearchHistory(histories: state.searchHistory)
+            
+        case let .setSortType(sortType):
+            state.sortType = sortType
         }
 
         return state
-    }
-    
-    private func postSectionItems(with posts: [Post]) -> [HomeViewSectionItem] {
-        var sectionItems = [HomeViewSectionItem]()
-        
-        posts.forEach { post in
-            sectionItems.append(.postItem(PostCellReactor(post: post)))
-        }
-        
-        return sectionItems
     }
 }
