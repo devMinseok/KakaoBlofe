@@ -14,7 +14,6 @@ target 'KakaoBlofe' do
   # Rx
   pod 'RxSwift', '5.1.1'
   pod 'RxCocoa', '5.1.1'
-  pod 'RxDataSources'
   pod 'RxViewController'
   pod 'RxOptional'
   pod 'RxGesture'

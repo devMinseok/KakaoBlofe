@@ -8,7 +8,6 @@
 import UIKit
 import Then
 import ReusableKit
-import RxDataSources
 import RxViewController
 import DropDown
 import RxGesture
@@ -81,7 +80,7 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         
         self.searchDropDown.anchorView = self.searchField
         self.searchDropDown.width = self.view.bounds.width - 80
-        self.searchDropDown.bottomOffset = CGPoint(x: 5, y: (self.navigationController?.navigationBar.frame.height)! + 15 )
+        self.searchDropDown.bottomOffset = CGPoint(x: 5, y: (self.navigationController?.navigationBar.frame.height)! + 15)
     }
     
     override func setupConstraints() {

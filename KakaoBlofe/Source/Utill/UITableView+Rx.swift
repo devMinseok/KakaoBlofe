@@ -7,19 +7,11 @@
 
 import RxCocoa
 import RxSwift
-import RxDataSources
 
 extension Reactive where Base: UITableView {
     var deselectRow: Binder<IndexPath> {
         return Binder(self.base) { tableView, indexPath in
             tableView.deselectRow(at: indexPath, animated: true)
         }
-    }
-    
-    func itemSelected<T>(dataSource: RxTableViewSectionedReloadDataSource<T>) -> ControlEvent<T.Item> {
-        let source = self.itemSelected.map { indexPath in
-            dataSource[indexPath]
-        }
-        return ControlEvent(events: source)
     }
 }
