@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 final class AppFlow: Flow {
-    private let searchService: SearchServiceType
+    private let provider: ServiceProviderType
     
     var root: Presentable {
         return self.rootViewController
@@ -19,8 +19,8 @@ final class AppFlow: Flow {
     
     private lazy var rootViewController = UINavigationController()
     
-    init(searchService: SearchServiceType) {
-        self.searchService = searchService
+    init(provider: ServiceProviderType) {
+        self.provider = provider
     }
     
     deinit {
@@ -40,7 +40,7 @@ final class AppFlow: Flow {
 // MARK: - Navigate Code
 extension AppFlow {
     private func navigateToHome() -> FlowContributors {
-        let reactor = HomeViewReactor(searchService: self.searchService)
+        let reactor = HomeViewReactor(provider: self.provider)
         let viewController = HomeViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: false)

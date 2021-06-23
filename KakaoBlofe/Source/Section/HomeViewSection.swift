@@ -11,8 +11,16 @@ enum HomeViewSection {
     case postSection([HomeViewSectionItem])
 }
 
-extension HomeViewSection: SectionModelType {
+extension HomeViewSection: SectionModelType, Equatable {
+    static func == (lhs: HomeViewSection, rhs: HomeViewSection) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     typealias Item = HomeViewSectionItem
+    
+    var id: UUID {
+        return UUID()
+    }
     
     var items: [HomeViewSectionItem] {
         switch self {

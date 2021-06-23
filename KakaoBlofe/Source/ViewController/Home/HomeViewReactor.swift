@@ -18,6 +18,8 @@ final class HomeViewReactor: Reactor, Stepper {
         case refresh
         case loadMore
         case postSelected(Post)
+        case updateSearchWord(String)
+        case loadSearchHistory
     }
 
     enum Mutation {
@@ -25,29 +27,34 @@ final class HomeViewReactor: Reactor, Stepper {
         case setRefreshing(Bool)
         case setPosts([Post])
         case appendPosts([Post], Bool)
+        case setSearchWord(String)
+        case setSearchHistories([String])
+        case setSearchHistory(String)
     }
 
     struct State {
         var section: [HomeViewSection] = [.postSection([])]
         
-        var query: String = "iOS"
+        var query: String = ""
         var page: Int = 0
         var isPageEnd: Bool = false
         var filterType: FilterType = .all
         var sortType: SortType = .titleAsc
+        
+        var searchHistory: [String] = [""]
         
         var isLoading: Bool = false
         var isRefreshing: Bool = false
     }
 
     let initialState: State = State()
-    private let searchService: SearchServiceType
+    private let provider: ServiceProviderType
     
     private let errorRelay = PublishRelay<ErrorResponse?>()
     lazy var error = errorRelay.asObservable()
 
-    init(searchService: SearchServiceType) {
-        self.searchService = searchService
+    init(provider: ServiceProviderType) {
+        self.provider = provider
     }
 
     func mutate(action: Action) -> Observable<Mutation> {
@@ -58,8 +65,9 @@ final class HomeViewReactor: Reactor, Stepper {
             
             let startRefreshing = Observable.just(Mutation.setRefreshing(true))
             let stopRefreshing = Observable.just(Mutation.setRefreshing(false))
+            let searchHistory = Observable.just(Mutation.setSearchHistory(self.currentState.query))
             
-            let search = self.searchService.searchPost(
+            let search = self.provider.searchService.searchPost(
                 query: self.currentState.query,
                 filter: self.currentState.filterType,
                 sort: self.currentState.sortType,
@@ -75,7 +83,7 @@ final class HomeViewReactor: Reactor, Stepper {
                 return .empty()
             }
             
-            return .concat([startRefreshing, search, stopRefreshing])
+            return .concat([startRefreshing, search, stopRefreshing, searchHistory])
             
         case .loadMore:
             if self.currentState.isRefreshing { return .empty() }
@@ -85,7 +93,7 @@ final class HomeViewReactor: Reactor, Stepper {
             let startLoading = Observable.just(Mutation.setLoading(true))
             let stopLoading = Observable.just(Mutation.setLoading(false))
             
-            let search = self.searchService.searchPost(
+            let search = self.provider.searchService.searchPost(
                 query: self.currentState.query,
                 filter: self.currentState.filterType,
                 sort: self.currentState.sortType,
@@ -106,6 +114,15 @@ final class HomeViewReactor: Reactor, Stepper {
         case let .postSelected(post):
 //            self.steps.accept(BlofeStep.postDetailIsRequired(post: post))
             return .empty()
+            
+        case let .updateSearchWord(keyword):
+            return .just(.setSearchWord(keyword.trimmingCharacters(in: .whitespacesAndNewlines)))
+            
+        case .loadSearchHistory:
+            return self.provider.searchService.getSearchHistory()
+                .map { histories -> Mutation in
+                    Mutation.setSearchHistories(histories)
+                }
         }
     }
 
@@ -130,6 +147,23 @@ final class HomeViewReactor: Reactor, Stepper {
             let sectionItems = state.section[0].items + self.postSectionItems(with: posts)
             state.section = [.postSection(sectionItems)]
             state.page += 1
+            
+        case let .setSearchWord(keyword):
+            state.query = keyword
+            
+        case let .setSearchHistories(histories):
+            state.searchHistory = histories
+            
+        case let .setSearchHistory(history):
+            if state.searchHistory.contains(history) {
+                state.searchHistory.removeAll(where: { $0 == history || $0 == "" })
+                state.searchHistory.append(history)
+            } else {
+                state.searchHistory.removeAll(where: { $0 == "" })
+                state.searchHistory.append(history)
+            }
+            
+            self.provider.searchService.setSearchHistory(histories: state.searchHistory)
         }
 
         return state

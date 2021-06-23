@@ -20,15 +20,26 @@ enum FilterType {
 
 protocol SearchServiceType {
     func searchPost(query: String, filter: FilterType, sort: SortType, page: Int, size: Int) -> Single<List>
+    
+    func getSearchHistory() -> Observable<[String]>
+    
+    func setSearchHistory(histories: [String])
 }
 
-final class SearchService: SearchServiceType {
-    let disposeBag = DisposeBag()
+final class SearchService: BaseService, SearchServiceType {
+    private var network: Network<KakaoAPI> = Network(plugins: [RequestLoggingPlugin()])
     
-    private let network: Network<KakaoAPI>
+    var searchHistories: [String]? {
+        return self.provider.userDefaultService.value(object: [String].self, forKey: "SearchHistory")
+    }
     
-    init(network: Network<KakaoAPI>) {
-        self.network = network
+    func getSearchHistory() -> Observable<[String]> {
+        guard let histories = self.searchHistories else { return .empty() }
+        return .just(histories)
+    }
+    
+    func setSearchHistory(histories: [String]) {
+        self.provider.userDefaultService.set(value: histories, forKey: "SearchHistory")
     }
     
     func searchBlog(query: String, page: Int, size: Int) -> Single<List> {
