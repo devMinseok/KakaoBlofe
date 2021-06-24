@@ -38,7 +38,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         self.view.setNeedsUpdateConstraints()
         
-//        self.setupStyle()
+        self.setupStyle()
         self.view.addSubview(self.activityIndicatorView)
     }
     
@@ -48,10 +48,6 @@ class BaseViewController: UIViewController {
             self.didSetupConstraints = true
         }
         super.updateViewConstraints()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     func setupConstraints() {

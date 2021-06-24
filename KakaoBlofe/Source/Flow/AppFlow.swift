@@ -11,12 +11,17 @@ import RxSwift
 import RxCocoa
 
 final class AppFlow: Flow {
+    private let provider: ServiceProviderType
     
     var root: Presentable {
         return self.rootViewController
     }
     
     private lazy var rootViewController = UINavigationController()
+    
+    init(provider: ServiceProviderType) {
+        self.provider = provider
+    }
     
     deinit {
         print("❎ \(type(of: self)): \(#function)")
@@ -30,13 +35,12 @@ final class AppFlow: Flow {
             return navigateToHome()
         }
     }
-    
 }
 
 // MARK: - Navigate Code
 extension AppFlow {
     private func navigateToHome() -> FlowContributors {
-        let reactor = HomeViewReactor()
+        let reactor = HomeViewReactor(provider: self.provider)
         let viewController = HomeViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: false)
