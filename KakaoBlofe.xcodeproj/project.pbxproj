@@ -14,6 +14,8 @@
 		F27B4CB626824B2700DA557E /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB526824B2700DA557E /* UserDefaultService.swift */; };
 		F27B4CB826824F8100DA557E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB726824F8100DA557E /* BaseService.swift */; };
 		F27B4CBA2683129500DA557E /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB92683129500DA557E /* FilterHeaderView.swift */; };
+		F27B4CBE26841D3600DA557E /* PostDetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CBC26841D3600DA557E /* PostDetailViewReactor.swift */; };
+		F27B4CBF26841D3600DA557E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CBD26841D3600DA557E /* PostDetailViewController.swift */; };
 		F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */; };
 		F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */; };
 		F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */; };
@@ -77,6 +79,8 @@
 		F27B4CB526824B2700DA557E /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		F27B4CB726824F8100DA557E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		F27B4CB92683129500DA557E /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
+		F27B4CBC26841D3600DA557E /* PostDetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewReactor.swift; sourceTree = "<group>"; };
+		F27B4CBD26841D3600DA557E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		F2EC7E9E26803BA300ADBF85 /* KakaoBlofe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoBlofe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 				91EFF80131496115EEB1F0E2 /* Pods-KakaoBlofeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F27B4CBB26841D0700DA557E /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F27B4CBC26841D3600DA557E /* PostDetailViewReactor.swift */,
+				F27B4CBD26841D3600DA557E /* PostDetailViewController.swift */,
+			);
+			path = PostDetail;
 			sourceTree = "<group>";
 		};
 		F2EC7E9526803BA300ADBF85 = {
@@ -264,6 +277,7 @@
 			children = (
 				F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */,
 				F2EC7EED268069BE00ADBF85 /* Home */,
+				F27B4CBB26841D0700DA557E /* PostDetail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -641,7 +655,9 @@
 				F2EC7EF926806F3F00ADBF85 /* SearchService.swift in Sources */,
 				F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */,
 				F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */,
+				F27B4CBF26841D3600DA557E /* PostDetailViewController.swift in Sources */,
 				F27B4CB826824F8100DA557E /* BaseService.swift in Sources */,
+				F27B4CBE26841D3600DA557E /* PostDetailViewReactor.swift in Sources */,
 				F27B4CBA2683129500DA557E /* FilterHeaderView.swift in Sources */,
 				F2EC7F1C268177FB00ADBF85 /* UITableView+Rx.swift in Sources */,
 				F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */,

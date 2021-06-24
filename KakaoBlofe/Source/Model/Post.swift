@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum PostKind {
-    case blog
-    case cafe
+enum PostKind: String {
+    case blog = "Blog"
+    case cafe = "Cafe"
 }
 
 struct Post: Codable, Equatable {
@@ -48,8 +48,6 @@ struct Post: Codable, Equatable {
             return .blog
         }
     }
-    
-    var isWebPageRead: Bool = false
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)

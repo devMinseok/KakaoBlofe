@@ -94,7 +94,7 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         super.setupConstraints()
         
         self.tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
 }
@@ -118,6 +118,11 @@ extension HomeViewController {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        self.searchField.rx.text.orEmpty
+            .map(Reactor.Action.updateSearchWord)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         let searchButtonTap = self.searchButton.rx.tap
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .share()
@@ -126,11 +131,6 @@ extension HomeViewController {
             .subscribe(onNext: { [weak self] in
                 self?.searchField.resignFirstResponder()
             })
-            .disposed(by: disposeBag)
-        
-        searchButtonTap
-            .map { Reactor.Action.updateSearchWord(self.searchField.text ?? "") }
-            .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         searchButtonTap
@@ -204,7 +204,7 @@ extension HomeViewController {
             .distinctUntilChanged()
             .bind(to: self.tableView.rx.items) { tableView, index, element in
                 guard let cell = tableView.dequeue(Reusable.postCell) else { return UITableViewCell() }
-                cell.reactor = PostCellReactor(post: element)
+                cell.reactor = PostCellReactor(post: element, provider: reactor.provider)
                 return cell
             }
             .disposed(by: disposeBag)

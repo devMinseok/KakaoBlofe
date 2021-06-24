@@ -53,10 +53,12 @@ final class HomeViewReactor: Reactor, Stepper {
         
         var isLoading: Bool = false
         var isRefreshing: Bool = false
+        
+        var searchedKeyword: String = ""
     }
 
     let initialState: State = State()
-    private let provider: ServiceProviderType
+    let provider: ServiceProviderType
     
     private let errorRelay = PublishRelay<ErrorResponse?>()
     lazy var error = errorRelay.asObservable()
@@ -100,7 +102,7 @@ final class HomeViewReactor: Reactor, Stepper {
             let stopLoading = Observable.just(Mutation.setLoading(false))
             
             let search = self.provider.searchService.searchPost(
-                query: self.currentState.query,
+                query: self.currentState.searchedKeyword,
                 filter: self.currentState.filterType,
                 page: self.currentState.page,
                 size: 25
@@ -117,7 +119,7 @@ final class HomeViewReactor: Reactor, Stepper {
             return .concat([startLoading, search, stopLoading])
             
         case let .postSelected(post):
-//            self.steps.accept(BlofeStep.postDetailIsRequired(post: post))
+            self.steps.accept(BlofeStep.postDetailIsRequired(post: post))
             return .empty()
             
         case let .updateSearchWord(keyword):
@@ -154,6 +156,8 @@ final class HomeViewReactor: Reactor, Stepper {
             state.isPageEnd = false
             state.page = 2
             state.items = posts.sorted(by: { $0.title < $1.title })
+            
+            state.searchedKeyword = state.query
             
         case let .appendPosts(posts, isEnd):
             state.isPageEnd = isEnd

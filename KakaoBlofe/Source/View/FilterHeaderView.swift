@@ -10,10 +10,12 @@ import UIKit
 final class FilterHeaderView: UIView {
     let filterButton = UIButton().then {
         $0.setTitle("ALL", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
     }
     
     let sortButton = UIButton().then {
         $0.setImage(UIImage(named: "sortIcon"), for: .normal)
+        $0.backgroundColor = .orange
     }
     
     override init(frame: CGRect) {

@@ -9,6 +9,7 @@ import UIKit
 import RxFlow
 import RxSwift
 import RxCocoa
+import SafariServices
 
 final class AppFlow: Flow {
     private let provider: ServiceProviderType
@@ -33,6 +34,12 @@ final class AppFlow: Flow {
         switch step {
         case .homeIsRequired:
             return navigateToHome()
+            
+        case let .postDetailIsRequired(post):
+            return navigateToPostDetail(post: post)
+            
+        case let .urlPageIsRequired(url):
+            return navigateToURLPage(url: url)
         }
     }
 }
@@ -45,5 +52,20 @@ extension AppFlow {
         
         self.rootViewController.pushViewController(viewController, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
+    }
+    
+    private func navigateToPostDetail(post: Post) -> FlowContributors {
+        let reactor = PostDetailViewReactor(post: post, provider: self.provider)
+        let viewController = PostDetailViewController(reactor: reactor)
+        
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
+    }
+    
+    private func navigateToURLPage(url: URL) -> FlowContributors {
+        let viewController = SFSafariViewController(url: url)
+        
+        self.rootViewController.present(viewController, animated: true)
+        return .none
     }
 }

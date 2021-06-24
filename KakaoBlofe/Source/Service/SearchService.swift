@@ -19,6 +19,14 @@ protocol SearchServiceType {
     func getSearchHistory() -> Observable<[String]>
     
     func setSearchHistory(histories: [String])
+    
+    var urlEvent: PublishSubject<[String]> { get }
+    
+    func setCheckedURL(url: URL)
+    
+    func refreshUrlEvent()
+    
+    func isCheckedURL(url: URL) -> Bool
 }
 
 final class SearchService: BaseService, SearchServiceType {
@@ -26,6 +34,10 @@ final class SearchService: BaseService, SearchServiceType {
     
     var searchHistories: [String]? {
         return self.provider.userDefaultService.value(object: [String].self, forKey: "SearchHistory")
+    }
+    
+    var readURLs: [String]? {
+        return self.provider.userDefaultService.value(object: [String].self, forKey: "readURLs")
     }
     
     func searchBlog(query: String, page: Int, size: Int) -> Single<List> {
@@ -36,6 +48,27 @@ final class SearchService: BaseService, SearchServiceType {
         return self.network.requestObject(.searchCafe(query, page, size), type: List.self)
     }
     
+    
+    let urlEvent = PublishSubject<[String]>()
+    
+    func isCheckedURL(url: URL) -> Bool {
+        let url = url.absoluteString
+        let urls = self.readURLs ?? [""]
+        return urls.contains(url)
+    }
+    
+    func setCheckedURL(url: URL) {
+        var urls = self.readURLs ?? [""]
+        urls.append(url.absoluteString)
+        
+        self.provider.userDefaultService.set(value: Array(Set(urls)), forKey: "readURLs")
+        self.urlEvent.onNext(urls)
+    }
+    
+    func refreshUrlEvent() {
+        let urls = self.readURLs ?? [""]
+        self.urlEvent.onNext(urls)
+    }
     
     func getSearchHistory() -> Observable<[String]> {
         guard let histories = self.searchHistories else { return .empty() }

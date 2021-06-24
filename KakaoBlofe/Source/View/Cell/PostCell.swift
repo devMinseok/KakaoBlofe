@@ -92,27 +92,35 @@ final class PostCell: BaseTableViewCell, View {
     }
     
     func bind(reactor: PostCellReactor) {
-        // MARK: - action
-        
-        // MARK: - state
+        // MARK: - State
         reactor.state.map { $0.thumbnail }
             .bind(to: self.thumbnail.rx.image(placeholder: UIImage(named: "placeholder")))
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.name }
+            .distinctUntilChanged()
             .bind(to: self.nameLabel.rx.text)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.title }
+            .distinctUntilChanged()
             .map { $0.htmlToAttributedString(font: Font.titleLabel, color: .darkGray) }
             .bind(to: self.titleLabel.rx.attributedText)
             .disposed(by: disposeBag)
         
-        //        reactor.state.map { $0.isWebPageRead }
-        //            .bind(to: self.overlay.rx.isHidden)
-        //            .disposed(by: disposeBag)
+        reactor.state.map { $0.isWebPageRead }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] isWebPageRead in
+                if isWebPageRead {
+                    self?.contentView.alpha = 0.3
+                } else {
+                    self?.contentView.alpha = 1
+                }
+            })
+            .disposed(by: disposeBag)
         
         reactor.state.map { $0.date }
+            .distinctUntilChanged()
             .subscribe(onNext: { [weak self] date in
                 let calendar = Calendar.current
                 
@@ -129,15 +137,9 @@ final class PostCell: BaseTableViewCell, View {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.kind }
-            .subscribe(onNext: { [weak self] kind in
-                switch kind {
-                case .blog:
-                    self?.kindLabel.text = "B"
-                    
-                case .cafe:
-                    self?.kindLabel.text = "C"
-                }
-            })
+            .distinctUntilChanged()
+            .map { String($0.rawValue.first!) }
+            .bind(to: self.kindLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }
