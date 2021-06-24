@@ -9,4 +9,6 @@ import RxFlow
 
 enum BlofeStep: Step {
     case homeIsRequired
+    case postDetailIsRequired(post: Post)
+    case urlPageIsRequired(url: URL)
 }

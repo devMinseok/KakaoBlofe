@@ -10,6 +10,12 @@
 		34A4B93681D73E6F318B18A8 /* Pods_KakaoBlofeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066469F8645C1BD72950BAF7 /* Pods_KakaoBlofeTests.framework */; };
 		4024538A73627EE0490D1E6F /* Pods_KakaoBlofe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938611784C57D33168D83F15 /* Pods_KakaoBlofe.framework */; };
 		9B3F327FA8D6C2D617AACDD2 /* Pods_KakaoBlofe_KakaoBlofeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */; };
+		F27B4CB4268249B300DA557E /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB3268249B300DA557E /* ServiceProvider.swift */; };
+		F27B4CB626824B2700DA557E /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB526824B2700DA557E /* UserDefaultService.swift */; };
+		F27B4CB826824F8100DA557E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB726824F8100DA557E /* BaseService.swift */; };
+		F27B4CBA2683129500DA557E /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CB92683129500DA557E /* FilterHeaderView.swift */; };
+		F27B4CBE26841D3600DA557E /* PostDetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CBC26841D3600DA557E /* PostDetailViewReactor.swift */; };
+		F27B4CBF26841D3600DA557E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4CBD26841D3600DA557E /* PostDetailViewController.swift */; };
 		F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */; };
 		F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */; };
 		F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */; };
@@ -20,6 +26,27 @@
 		F2EC7EE726805E7400ADBF85 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */; };
 		F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */; };
 		F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */; };
+		F2EC7EF226806BD500ADBF85 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF126806BD500ADBF85 /* RequestLoggingPlugin.swift */; };
+		F2EC7EF426806BF300ADBF85 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF326806BF300ADBF85 /* BaseAPI.swift */; };
+		F2EC7EF626806C0B00ADBF85 /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF526806C0B00ADBF85 /* KakaoAPI.swift */; };
+		F2EC7EF926806F3F00ADBF85 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EF826806F3F00ADBF85 /* SearchService.swift */; };
+		F2EC7EFB26806F7900ADBF85 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFA26806F7900ADBF85 /* Network.swift */; };
+		F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFC26806FE500ADBF85 /* HandleResponse.swift */; };
+		F2EC7F002680705300ADBF85 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */; };
+		F2EC7F022680716000ADBF85 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F012680716000ADBF85 /* List.swift */; };
+		F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F032680723F00ADBF85 /* Meta.swift */; };
+		F2EC7F082680730D00ADBF85 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F072680730D00ADBF85 /* Post.swift */; };
+		F2EC7F0C2680D17800ADBF85 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0B2680D17800ADBF85 /* PostCell.swift */; };
+		F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */; };
+		F2EC7F102680D22300ADBF85 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */; };
+		F2EC7F132680E0F300ADBF85 /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */; };
+		F2EC7F1826814EF000ADBF85 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */; };
+		F2EC7F1A26816F6800ADBF85 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1926816F6800ADBF85 /* String.swift */; };
+		F2EC7F1C268177FB00ADBF85 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1B268177FB00ADBF85 /* UITableView+Rx.swift */; };
+		F2EC7F1E2681796800ADBF85 /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1D2681796800ADBF85 /* CGFloatLiteral.swift */; };
+		F2EC7F2026817E6600ADBF85 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1F26817E6600ADBF85 /* RefreshControl.swift */; };
+		F2EC7F222681829C00ADBF85 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F212681829C00ADBF85 /* UIScrollView+Rx.swift */; };
+		F2EC7F242681833300ADBF85 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F232681833300ADBF85 /* UIScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +75,12 @@
 		938611784C57D33168D83F15 /* Pods_KakaoBlofe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoBlofe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE91B2B64F2782B3781D07B /* Pods-KakaoBlofe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoBlofe.release.xcconfig"; path = "Target Support Files/Pods-KakaoBlofe/Pods-KakaoBlofe.release.xcconfig"; sourceTree = "<group>"; };
 		E2C3116CB008265FB4294F60 /* Pods-KakaoBlofe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KakaoBlofe.debug.xcconfig"; path = "Target Support Files/Pods-KakaoBlofe/Pods-KakaoBlofe.debug.xcconfig"; sourceTree = "<group>"; };
+		F27B4CB3268249B300DA557E /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		F27B4CB526824B2700DA557E /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
+		F27B4CB726824F8100DA557E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		F27B4CB92683129500DA557E /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
+		F27B4CBC26841D3600DA557E /* PostDetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewReactor.swift; sourceTree = "<group>"; };
+		F27B4CBD26841D3600DA557E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		F2EC7E9E26803BA300ADBF85 /* KakaoBlofe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoBlofe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +97,27 @@
 		F2EC7EE526805E7400ADBF85 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F2EC7EF126806BD500ADBF85 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
+		F2EC7EF326806BF300ADBF85 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		F2EC7EF526806C0B00ADBF85 /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
+		F2EC7EF826806F3F00ADBF85 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		F2EC7EFA26806F7900ADBF85 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F2EC7EFC26806FE500ADBF85 /* HandleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponse.swift; sourceTree = "<group>"; };
+		F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		F2EC7F012680716000ADBF85 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		F2EC7F032680723F00ADBF85 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		F2EC7F072680730D00ADBF85 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F2EC7F0B2680D17800ADBF85 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellReactor.swift; sourceTree = "<group>"; };
+		F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Rx.swift"; sourceTree = "<group>"; };
+		F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		F2EC7F1926816F6800ADBF85 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F2EC7F1B268177FB00ADBF85 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
+		F2EC7F1D2681796800ADBF85 /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
+		F2EC7F1F26817E6600ADBF85 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		F2EC7F212681829C00ADBF85 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
+		F2EC7F232681833300ADBF85 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoBlofe_KakaoBlofeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +170,15 @@
 				91EFF80131496115EEB1F0E2 /* Pods-KakaoBlofeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F27B4CBB26841D0700DA557E /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F27B4CBC26841D3600DA557E /* PostDetailViewReactor.swift */,
+				F27B4CBD26841D3600DA557E /* PostDetailViewController.swift */,
+			);
+			path = PostDetail;
 			sourceTree = "<group>";
 		};
 		F2EC7E9526803BA300ADBF85 = {
@@ -174,6 +237,11 @@
 				F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */,
 				F2EC7ED42680503400ADBF85 /* Flow */,
 				F2EC7ED52680504200ADBF85 /* ViewController */,
+				F2EC7EFE2680704D00ADBF85 /* Model */,
+				F2EC7F092680D12A00ADBF85 /* View */,
+				F2EC7EF726806F1500ADBF85 /* Service */,
+				F2EC7EEE26806B8B00ADBF85 /* Network */,
+				F2EC7F112680E09D00ADBF85 /* Utill */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -209,6 +277,7 @@
 			children = (
 				F2EC7EE926805EC300ADBF85 /* BaseViewController.swift */,
 				F2EC7EED268069BE00ADBF85 /* Home */,
+				F27B4CBB26841D0700DA557E /* PostDetail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -220,6 +289,90 @@
 				F2EC7EE626805E7400ADBF85 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F2EC7EEE26806B8B00ADBF85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EFC26806FE500ADBF85 /* HandleResponse.swift */,
+				F2EC7EFA26806F7900ADBF85 /* Network.swift */,
+				F2EC7EEF26806B9500ADBF85 /* API */,
+				F2EC7EF026806BB900ADBF85 /* Plugin */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F2EC7EEF26806B9500ADBF85 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EF326806BF300ADBF85 /* BaseAPI.swift */,
+				F2EC7EF526806C0B00ADBF85 /* KakaoAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F2EC7EF026806BB900ADBF85 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EF126806BD500ADBF85 /* RequestLoggingPlugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		F2EC7EF726806F1500ADBF85 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F27B4CB726824F8100DA557E /* BaseService.swift */,
+				F27B4CB3268249B300DA557E /* ServiceProvider.swift */,
+				F2EC7EF826806F3F00ADBF85 /* SearchService.swift */,
+				F27B4CB526824B2700DA557E /* UserDefaultService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F2EC7EFE2680704D00ADBF85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7EFF2680705300ADBF85 /* ErrorResponse.swift */,
+				F2EC7F012680716000ADBF85 /* List.swift */,
+				F2EC7F032680723F00ADBF85 /* Meta.swift */,
+				F2EC7F072680730D00ADBF85 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2EC7F092680D12A00ADBF85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F27B4CB92683129500DA557E /* FilterHeaderView.swift */,
+				F2EC7F1F26817E6600ADBF85 /* RefreshControl.swift */,
+				F2EC7F0A2680D14800ADBF85 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2EC7F0A2680D14800ADBF85 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7F0F2680D22300ADBF85 /* BaseTableViewCell.swift */,
+				F2EC7F0B2680D17800ADBF85 /* PostCell.swift */,
+				F2EC7F0D2680D19B00ADBF85 /* PostCellReactor.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2EC7F112680E09D00ADBF85 /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC7F122680E0F300ADBF85 /* UIImageView+Rx.swift */,
+				F2EC7F1B268177FB00ADBF85 /* UITableView+Rx.swift */,
+				F2EC7F212681829C00ADBF85 /* UIScrollView+Rx.swift */,
+				F2EC7F232681833300ADBF85 /* UIScrollView.swift */,
+				F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */,
+				F2EC7F1926816F6800ADBF85 /* String.swift */,
+				F2EC7F1D2681796800ADBF85 /* CGFloatLiteral.swift */,
+			);
+			path = Utill;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,10 +632,37 @@
 			files = (
 				F2EC7EE726805E7400ADBF85 /* HomeViewReactor.swift in Sources */,
 				F2EC7ED92680509C00ADBF85 /* AppFlow.swift in Sources */,
+				F2EC7F1A26816F6800ADBF85 /* String.swift in Sources */,
 				F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */,
 				F2EC7ED72680507100ADBF85 /* BlofeStep.swift in Sources */,
+				F2EC7F242681833300ADBF85 /* UIScrollView.swift in Sources */,
+				F2EC7F2026817E6600ADBF85 /* RefreshControl.swift in Sources */,
+				F2EC7F0C2680D17800ADBF85 /* PostCell.swift in Sources */,
+				F2EC7EF226806BD500ADBF85 /* RequestLoggingPlugin.swift in Sources */,
+				F2EC7EFB26806F7900ADBF85 /* Network.swift in Sources */,
+				F2EC7F102680D22300ADBF85 /* BaseTableViewCell.swift in Sources */,
+				F2EC7F222681829C00ADBF85 /* UIScrollView+Rx.swift in Sources */,
+				F2EC7F132680E0F300ADBF85 /* UIImageView+Rx.swift in Sources */,
+				F2EC7F1E2681796800ADBF85 /* CGFloatLiteral.swift in Sources */,
+				F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */,
+				F2EC7F082680730D00ADBF85 /* Post.swift in Sources */,
+				F2EC7EF426806BF300ADBF85 /* BaseAPI.swift in Sources */,
+				F27B4CB4268249B300DA557E /* ServiceProvider.swift in Sources */,
+				F2EC7F042680723F00ADBF85 /* Meta.swift in Sources */,
+				F2EC7EF626806C0B00ADBF85 /* KakaoAPI.swift in Sources */,
+				F2EC7F022680716000ADBF85 /* List.swift in Sources */,
+				F2EC7F1826814EF000ADBF85 /* DateFormatter.swift in Sources */,
+				F2EC7EF926806F3F00ADBF85 /* SearchService.swift in Sources */,
+				F2EC7F0E2680D19B00ADBF85 /* PostCellReactor.swift in Sources */,
 				F2EC7EE826805E7400ADBF85 /* HomeViewController.swift in Sources */,
+				F27B4CBF26841D3600DA557E /* PostDetailViewController.swift in Sources */,
+				F27B4CB826824F8100DA557E /* BaseService.swift in Sources */,
+				F27B4CBE26841D3600DA557E /* PostDetailViewReactor.swift in Sources */,
+				F27B4CBA2683129500DA557E /* FilterHeaderView.swift in Sources */,
+				F2EC7F1C268177FB00ADBF85 /* UITableView+Rx.swift in Sources */,
 				F2EC7EEA26805EC300ADBF85 /* BaseViewController.swift in Sources */,
+				F27B4CB626824B2700DA557E /* UserDefaultService.swift in Sources */,
+				F2EC7F002680705300ADBF85 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

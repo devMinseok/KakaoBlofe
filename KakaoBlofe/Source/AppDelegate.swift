@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
+    let serviceProvider = ServiceProvider()
     
     func application(
         _ application: UIApplication,
@@ -30,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("✅ did navigate to flow=\(flow) and step=\(step)")
         }).disposed(by: self.disposeBag)
         
-        let appFlow = AppFlow()
+        let appFlow = AppFlow(provider: self.serviceProvider)
         
         Flows.use(appFlow, when: .created) { root in
             self.window?.rootViewController = root
