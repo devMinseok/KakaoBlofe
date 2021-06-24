@@ -15,12 +15,6 @@ enum SortType {
     case recency
 }
 
-enum FilterType {
-    case cafe
-    case blog
-    case all
-}
-
 final class HomeViewReactor: Reactor, Stepper {
 
     var steps = PublishRelay<Step>()
@@ -33,6 +27,7 @@ final class HomeViewReactor: Reactor, Stepper {
         case loadSearchHistory
         case updateSort(SortType)
         case updateSearchHistory
+        case updateFilter(FilterType)
     }
 
     enum Mutation {
@@ -43,18 +38,17 @@ final class HomeViewReactor: Reactor, Stepper {
         case setSearchWord(String)
         case setSearchHistories([String])
         case setSearchHistory(String)
-        case setSortType(SortType)
+        case setFilterType(FilterType)
+        case applySortType(SortType)
     }
 
     struct State {
         var items: [Post] = []
         
         var query: String = ""
-        var page: Int = 0
-        var isPageEnd: Bool = false
         var filterType: FilterType = .all
-        var sortType: SortType = .titleAsc
-        
+        var page: Int = 1
+        var isPageEnd: Bool = false
         var searchHistory: [String] = [""]
         
         var isLoading: Bool = false
@@ -136,10 +130,13 @@ final class HomeViewReactor: Reactor, Stepper {
                 }
             
         case let .updateSort(sortType):
-            return .just(.setSortType(sortType))
+            return .just(.applySortType(sortType))
             
         case .updateSearchHistory:
-            return .just(Mutation.setSearchHistory(self.currentState.query))
+            return .just(.setSearchHistory(self.currentState.query))
+            
+        case let .updateFilter(filterType):
+            return .just(.setFilterType(filterType))
         }
     }
 
@@ -156,27 +153,12 @@ final class HomeViewReactor: Reactor, Stepper {
         case let .setPosts(posts):
             state.isPageEnd = false
             state.page = 2
-            
-            switch state.sortType {
-            case .recency:
-                state.items = posts.sorted(by: { $0.dateTime > $1.dateTime })
-                
-            case .titleAsc:
-                state.items = posts.sorted(by: { $0.title < $1.title })
-            }
+            state.items = posts.sorted(by: { $0.title < $1.title })
             
         case let .appendPosts(posts, isEnd):
             state.isPageEnd = isEnd
             state.page += 1
-            let result = state.items + posts
-            
-            switch state.sortType {
-            case .recency:
-                state.items = result.sorted(by: { $0.dateTime > $1.dateTime })
-                
-            case .titleAsc:
-                state.items = result.sorted(by: { $0.title < $1.title })
-            }
+            state.items += posts.sorted(by: { $0.title < $1.title })
             
         case let .setSearchWord(keyword):
             state.query = keyword
@@ -195,8 +177,17 @@ final class HomeViewReactor: Reactor, Stepper {
             
             self.provider.searchService.setSearchHistory(histories: state.searchHistory)
             
-        case let .setSortType(sortType):
-            state.sortType = sortType
+        case let .applySortType(sortType):
+            switch sortType {
+            case .recency:
+                state.items.sort(by: { $0.dateTime > $1.dateTime })
+                
+            case .titleAsc:
+                state.items.sort(by: { $0.title < $1.title })
+            }
+            
+        case let .setFilterType(filterType):
+            state.filterType = filterType
         }
 
         return state

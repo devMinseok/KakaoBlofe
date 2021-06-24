@@ -7,6 +7,12 @@
 
 import RxSwift
 
+enum FilterType {
+    case cafe
+    case blog
+    case all
+}
+
 protocol SearchServiceType {
     func searchPost(query: String, filter: FilterType, page: Int, size: Int) -> Single<List>
     
@@ -22,6 +28,15 @@ final class SearchService: BaseService, SearchServiceType {
         return self.provider.userDefaultService.value(object: [String].self, forKey: "SearchHistory")
     }
     
+    func searchBlog(query: String, page: Int, size: Int) -> Single<List> {
+        return self.network.requestObject(.searchBlog(query, page, size), type: List.self)
+    }
+    
+    func searchCafe(query: String, page: Int, size: Int) -> Single<List> {
+        return self.network.requestObject(.searchCafe(query, page, size), type: List.self)
+    }
+    
+    
     func getSearchHistory() -> Observable<[String]> {
         guard let histories = self.searchHistories else { return .empty() }
         return .just(histories)
@@ -29,14 +44,6 @@ final class SearchService: BaseService, SearchServiceType {
     
     func setSearchHistory(histories: [String]) {
         self.provider.userDefaultService.set(value: histories, forKey: "SearchHistory")
-    }
-    
-    func searchBlog(query: String, page: Int, size: Int) -> Single<List> {
-        return self.network.requestObject(.searchBlog(query, page, size), type: List.self)
-    }
-    
-    func searchCafe(query: String, page: Int, size: Int) -> Single<List> {
-        return self.network.requestObject(.searchCafe(query, page, size), type: List.self)
     }
     
     func searchPost(query: String, filter: FilterType, page: Int, size: Int) -> Single<List> {
@@ -53,7 +60,6 @@ final class SearchService: BaseService, SearchServiceType {
                     pageableCount: lhs.meta.pageableCount + rhs.meta.pageableCount,
                     totalCount: lhs.meta.totalCount + rhs.meta.totalCount
                 )
-                
                 return List(documents: documents, meta: meta)
             }
             

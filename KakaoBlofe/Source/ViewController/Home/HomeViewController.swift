@@ -35,6 +35,7 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     
     // MARK: - UI
     let searchDropDown = DropDown()
+    let filterDropDown = DropDown()
     
     let refreshControl = RefreshControl()
     
@@ -80,7 +81,13 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         
         self.searchDropDown.anchorView = self.searchField
         self.searchDropDown.width = self.view.bounds.width - 80
-        self.searchDropDown.bottomOffset = CGPoint(x: 5, y: (self.navigationController?.navigationBar.frame.height)! + 15)
+        self.searchDropDown.bottomOffset = CGPoint(x: 5, y: (self.navigationController?.navigationBar.bounds.height)! + 10)
+        
+        self.filterDropDown.anchorView = self.tableViewHeader
+        self.filterDropDown.width = self.view.bounds.width - 80
+        self.filterDropDown.bottomOffset = CGPoint(x: 5, y: self.tableViewHeader.bounds.height)
+        
+        self.filterDropDown.dataSource = ["All", "Cafe", "Blog"]
     }
     
     override func setupConstraints() {
@@ -90,8 +97,10 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             make.edges.equalToSuperview()
         }
     }
-    
-    // MARK: - Configuring
+}
+
+// MARK: - Configuring
+extension HomeViewController {
     func bind(reactor: Reactor) {
         // MARK: - Action
         self.rx.viewDidLoad
@@ -109,20 +118,23 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        self.searchField.rx.text.orEmpty
-            .map(Reactor.Action.updateSearchWord)
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
         let searchButtonTap = self.searchButton.rx.tap
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .share()
         
         searchButtonTap
-            .map { [weak self] _ in
+            .subscribe(onNext: { [weak self] in
                 self?.searchField.resignFirstResponder()
-                return Reactor.Action.refresh
-            }
+            })
+            .disposed(by: disposeBag)
+        
+        searchButtonTap
+            .map { Reactor.Action.updateSearchWord(self.searchField.text ?? "") }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        searchButtonTap
+            .map { Reactor.Action.refresh }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -131,7 +143,7 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        self.searchDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+        self.searchDropDown.selectionAction = { [unowned self] index, item in
             self.searchDropDown.clearSelection()
             self.searchField.resignFirstResponder()
             
@@ -139,6 +151,30 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             reactor.action.onNext(.updateSearchWord(item))
             reactor.action.onNext(.refresh)
             reactor.action.onNext(.updateSearchHistory)
+        }
+        
+        self.filterDropDown.selectionAction = { [unowned self] index, item in
+            self.filterDropDown.clearSelection()
+            self.searchField.resignFirstResponder()
+            
+            switch item {
+            case "All":
+                self.tableViewHeader.filterButton.setTitle("All", for: .normal)
+                reactor.action.onNext(.updateFilter(.all))
+                
+            case "Cafe":
+                self.tableViewHeader.filterButton.setTitle("Cafe", for: .normal)
+                reactor.action.onNext(.updateFilter(.cafe))
+                
+            case "Blog":
+                self.tableViewHeader.filterButton.setTitle("Blog", for: .normal)
+                reactor.action.onNext(.updateFilter(.blog))
+                
+            default:
+                return
+            }
+            
+            reactor.action.onNext(.refresh)
         }
         
         self.tableView.rx.modelSelected(Post.self)
@@ -149,22 +185,12 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         
         self.tableViewHeader.sortButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                var titleStyle = UIAlertAction.Style.default
-                var dateTimeStyle = UIAlertAction.Style.default
-                
-                switch reactor.currentState.sortType {
-                case .recency: dateTimeStyle = .destructive
-                case .titleAsc: titleStyle = .destructive
-                }
-                
                 let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-                let titleAction = UIAlertAction(title: "Title", style: titleStyle) { _ in
+                let titleAction = UIAlertAction(title: "Title", style: .default) { _ in
                     reactor.action.onNext(.updateSort(.titleAsc))
-                    reactor.action.onNext(.refresh)
                 }
-                let dateTimeAction = UIAlertAction(title: "Datetime", style: dateTimeStyle) { _ in
+                let dateTimeAction = UIAlertAction(title: "Datetime", style: .default) { _ in
                     reactor.action.onNext(.updateSort(.recency))
-                    reactor.action.onNext(.refresh)
                 }
                 let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
                 
@@ -227,6 +253,12 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
                 self?.searchDropDown.show()
+            })
+            .disposed(by: disposeBag)
+        
+        self.tableViewHeader.filterButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.filterDropDown.show()
             })
             .disposed(by: disposeBag)
         
