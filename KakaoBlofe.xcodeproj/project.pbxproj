@@ -19,7 +19,6 @@
 		F2EC7EA226803BA300ADBF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EA126803BA300ADBF85 /* AppDelegate.swift */; };
 		F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAA26803BA500ADBF85 /* Assets.xcassets */; };
 		F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EC7EAC26803BA500ADBF85 /* LaunchScreen.storyboard */; };
-		F2EC7EB926803BA600ADBF85 /* KakaoBlofeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EB826803BA600ADBF85 /* KakaoBlofeTests.swift */; };
 		F2EC7EC426803BA600ADBF85 /* KakaoBlofeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7EC326803BA600ADBF85 /* KakaoBlofeUITests.swift */; };
 		F2EC7ED72680507100ADBF85 /* BlofeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7ED62680507100ADBF85 /* BlofeStep.swift */; };
 		F2EC7ED92680509C00ADBF85 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7ED82680509C00ADBF85 /* AppFlow.swift */; };
@@ -47,6 +46,12 @@
 		F2EC7F2026817E6600ADBF85 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F1F26817E6600ADBF85 /* RefreshControl.swift */; };
 		F2EC7F222681829C00ADBF85 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F212681829C00ADBF85 /* UIScrollView+Rx.swift */; };
 		F2EC7F242681833300ADBF85 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC7F232681833300ADBF85 /* UIScrollView.swift */; };
+		F2FB3CB1268564410069A400 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FB3CB0268564410069A400 /* Bundle.swift */; };
+		F2FB3CB6268566B60069A400 /* BlogPosts.json in Resources */ = {isa = PBXBuildFile; fileRef = F2FB3CB5268566B60069A400 /* BlogPosts.json */; };
+		F2FB3CB8268566E70069A400 /* CafePosts.json in Resources */ = {isa = PBXBuildFile; fileRef = F2FB3CB7268566E70069A400 /* CafePosts.json */; };
+		F2FB3CBD2685694A0069A400 /* HomeViewReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FB3CBC2685694A0069A400 /* HomeViewReactorTests.swift */; };
+		F2FB3CC1268575540069A400 /* StubServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FB3CC0268575540069A400 /* StubServiceProvider.swift */; };
+		F2FB3CC3268590120069A400 /* StubUserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FB3CC2268590120069A400 /* StubUserDefaultService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +92,6 @@
 		F2EC7EAD26803BA500ADBF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2EC7EAF26803BA500ADBF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2EC7EB426803BA600ADBF85 /* KakaoBlofeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KakaoBlofeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2EC7EB826803BA600ADBF85 /* KakaoBlofeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoBlofeTests.swift; sourceTree = "<group>"; };
 		F2EC7EBA26803BA600ADBF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2EC7EBF26803BA600ADBF85 /* KakaoBlofeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KakaoBlofeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EC7EC326803BA600ADBF85 /* KakaoBlofeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoBlofeUITests.swift; sourceTree = "<group>"; };
@@ -118,6 +122,12 @@
 		F2EC7F1F26817E6600ADBF85 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F2EC7F212681829C00ADBF85 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		F2EC7F232681833300ADBF85 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		F2FB3CB0268564410069A400 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		F2FB3CB5268566B60069A400 /* BlogPosts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BlogPosts.json; sourceTree = "<group>"; };
+		F2FB3CB7268566E70069A400 /* CafePosts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CafePosts.json; sourceTree = "<group>"; };
+		F2FB3CBC2685694A0069A400 /* HomeViewReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactorTests.swift; sourceTree = "<group>"; };
+		F2FB3CC0268575540069A400 /* StubServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubServiceProvider.swift; sourceTree = "<group>"; };
+		F2FB3CC2268590120069A400 /* StubUserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubUserDefaultService.swift; sourceTree = "<group>"; };
 		F6F464F29B10A3ECEB8BBACB /* Pods_KakaoBlofe_KakaoBlofeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KakaoBlofe_KakaoBlofeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -216,8 +226,9 @@
 		F2EC7EB726803BA600ADBF85 /* KakaoBlofeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2EC7EB826803BA600ADBF85 /* KakaoBlofeTests.swift */,
 				F2EC7EBA26803BA600ADBF85 /* Info.plist */,
+				F2FB3CBE2685752D0069A400 /* Stub */,
+				F2FB3CB9268568D20069A400 /* ViewController */,
 			);
 			path = KakaoBlofeTests;
 			sourceTree = "<group>";
@@ -298,6 +309,7 @@
 				F2EC7EFA26806F7900ADBF85 /* Network.swift */,
 				F2EC7EEF26806B9500ADBF85 /* API */,
 				F2EC7EF026806BB900ADBF85 /* Plugin */,
+				F2FB3CB2268564750069A400 /* MockJson */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -371,8 +383,43 @@
 				F2EC7F1726814EF000ADBF85 /* DateFormatter.swift */,
 				F2EC7F1926816F6800ADBF85 /* String.swift */,
 				F2EC7F1D2681796800ADBF85 /* CGFloatLiteral.swift */,
+				F2FB3CB0268564410069A400 /* Bundle.swift */,
 			);
 			path = Utill;
+			sourceTree = "<group>";
+		};
+		F2FB3CB2268564750069A400 /* MockJson */ = {
+			isa = PBXGroup;
+			children = (
+				F2FB3CB5268566B60069A400 /* BlogPosts.json */,
+				F2FB3CB7268566E70069A400 /* CafePosts.json */,
+			);
+			path = MockJson;
+			sourceTree = "<group>";
+		};
+		F2FB3CB9268568D20069A400 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F2FB3CBC2685694A0069A400 /* HomeViewReactorTests.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F2FB3CBE2685752D0069A400 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				F2FB3CBF268575320069A400 /* Service */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		F2FB3CBF268575320069A400 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F2FB3CC0268575540069A400 /* StubServiceProvider.swift */,
+				F2FB3CC2268590120069A400 /* StubUserDefaultService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +532,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EC7EAE26803BA500ADBF85 /* LaunchScreen.storyboard in Resources */,
+				F2FB3CB6268566B60069A400 /* BlogPosts.json in Resources */,
+				F2FB3CB8268566E70069A400 /* CafePosts.json in Resources */,
 				F2EC7EAB26803BA500ADBF85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +692,7 @@
 				F2EC7F102680D22300ADBF85 /* BaseTableViewCell.swift in Sources */,
 				F2EC7F222681829C00ADBF85 /* UIScrollView+Rx.swift in Sources */,
 				F2EC7F132680E0F300ADBF85 /* UIImageView+Rx.swift in Sources */,
+				F2FB3CB1268564410069A400 /* Bundle.swift in Sources */,
 				F2EC7F1E2681796800ADBF85 /* CGFloatLiteral.swift in Sources */,
 				F2EC7EFD26806FE500ADBF85 /* HandleResponse.swift in Sources */,
 				F2EC7F082680730D00ADBF85 /* Post.swift in Sources */,
@@ -670,7 +720,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2EC7EB926803BA600ADBF85 /* KakaoBlofeTests.swift in Sources */,
+				F2FB3CBD2685694A0069A400 /* HomeViewReactorTests.swift in Sources */,
+				F2FB3CC3268590120069A400 /* StubUserDefaultService.swift in Sources */,
+				F2FB3CC1268575540069A400 /* StubServiceProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

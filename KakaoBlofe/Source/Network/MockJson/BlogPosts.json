@@ -1,0 +1,209 @@
+{
+    "documents": [
+        {
+            "blogname": "아기개발자의 성장일기",
+            "contents": "WWDC 20 - Make your app visually accessible 를 본 기록 ✏️ [ 인트로 ] visual accessibility를 생각할 때 너는 VoiceOver(built-in screen reader on <b>iOS</b>)를 생각할 것입니다. 하지만 visual accessibility에는 VoiceOver 뿐만아니라 더 많은 것들이 있습니다. 어떤 사람들은 완전한 시야(full sight), 부분적인 시야...",
+            "datetime": "2021-05-27T10:09:21.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/8CGAPJdukpg",
+            "title": "[<b>iOS</b>] Visual Accessibility",
+            "url": "http://eunjin3786.tistory.com/368"
+        },
+        {
+            "blogname": "와주셔서 영광입니다.",
+            "contents": "알림이 뜨기위해 delegate를 설정 !! 그리고 설정해줘야하는 함수 발견 뚞딲 completionHandler에 option들을 넣어줘요. .alert는 <b>iOS</b> 14.0에서 deprecated래요. 하지만 전 <b>iOS</b> 13.0을 쓰니까 ㅎ 실행! 후기 저번에 <b>iOS</b>에서 NFC를 쓰는 방법을 공부하면서 애플개발자 문서를 엉덩이 무겁게 봤는데. 그래서인지...",
+            "datetime": "2021-06-23T14:13:33.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/KyOrQGmzWXO",
+            "title": "[<b>iOS</b>] UserNotifications",
+            "url": "http://poisonf2.tistory.com/90"
+        },
+        {
+            "blogname": "알뜰정보모음",
+            "contents": "요즘 연예인들도 인싸들도 필수로 한 번씩 해보는 디즈니 필터를 안드로이드와 <b>IOS</b>에서 다운로드하는 방법을 알려드리겠습니다. 디즈니 필터는 내 사진을 디즈니 주인공 얼굴을 입혀서 표정 등을 디즈니 캐릭터로 보여주는 앱인데요. 갤럭시 아이폰 모두 사용할 수 있습니다. 가장 많이 사용되고 사실감 있게 표현되는...",
+            "datetime": "2021-06-21T18:19:40.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/CK7kb7aTyWV",
+            "title": "디즈니 필터 안드로이드 / <b>IOS</b> 다운로드",
+            "url": "http://christmas-cookies.tistory.com/265"
+        },
+        {
+            "blogname": "Dannian's Warehouse",
+            "contents": "WWDC21 키노트 발표 정리 시리즈 <b>iOS</b>(이 포스트) AirPods(정리 중) iPadOS(정리 중) Privacy(정리 중) iCloud(정리 중) Health(정리 중) watchOS(정리 중) Home(정리 중) macOS(정리 중) Developer Technologies and App Store(정리 중) (WWDC21 키노트 발표 정리 시리즈 첫 번째 포스트입니다.) Apple 공식 유튜브 채널...",
+            "datetime": "2021-06-09T10:52:52.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/Bnp52reBefv",
+            "title": "[WWDC21] 키노트 발표 정리(<b>iOS</b>)",
+            "url": "http://dragoner.tistory.com/183"
+        },
+        {
+            "blogname": "L의 잡학다식 스토리",
+            "contents": "안녕하세요 L스토리입니다. 그동안 제주도로 힐링 여행을 가느라 제대로 된 글을 잘 못썼었는데요. 바로 어제죠, 어제 애플이 WWDC21에서 공개한 <b>iOS</b> 15, iPadOS 15, macOS Monterey, 그리고 watchOS 8까지 공개가 됬는데요 오늘은 그 시작을 알리는 <b>iOS</b> 15에 대해서 좀 알려드릴려고 합니다. !! 이번 <b>iOS</b> 15업데이트...",
+            "datetime": "2021-06-09T10:04:34.000+09:00",
+            "thumbnail": "https://search4.kakaocdn.net/argon/130x130_85_c/G0BdUx365FM",
+            "title": "드디어 공개된 <b>iOS</b> 15.0 Beta 1 후기 !!",
+            "url": "http://lssstory.tistory.com/11"
+        },
+        {
+            "blogname": "아기개발자의 성장일기",
+            "contents": "먼저 언급하시고 이 목록에서 이번에(2019년) 추가된 두가지 항목을 언급하십니다. Voice Control와 Full Keyboard Access 입니다. ( Full Keyboard Access는 <b>iOS</b>에서는 완전 새로운 것이고 Mac에서는 크게 향상되었습니다. ) VoiceOver, Full Keyboard Access, Voice Control 과 함께 너의 앱을 써보십시오 [2...",
+            "datetime": "2021-06-06T23:11:03.000+09:00",
+            "thumbnail": "https://search2.kakaocdn.net/argon/130x130_85_c/DRMpuptOKOc",
+            "title": "[<b>iOS</b>] Accessibility in SwiftUI",
+            "url": "http://eunjin3786.tistory.com/374"
+        },
+        {
+            "blogname": "빠르크의 3분강좌 Park Pictures™",
+            "contents": "애플 WWDC 2021 주요 발표 정리 - <b>iOS</b>15 애플 신기술의 흐름을 놓치고 싶지 않은 분들을 위한 브리핑 안녕하세요. 빠르크 입니다. 2021년 6월 8일 화요일 새벽에 애플의 개발자 컨퍼런스 WWDC 2021가 열렸습니다. 올 해도 작년 WWDC 2020과 같이 코로나 19로 인한 비대면 상황에서 영상을 통해 새로운 애플의 OS들이...",
+            "datetime": "2021-06-08T10:09:11.000+09:00",
+            "thumbnail": "https://search4.kakaocdn.net/argon/130x130_85_c/I3sDor8XSRp",
+            "title": "애플 WWDC 2021 주요 발표 정리 - <b>iOS</b>15",
+            "url": "http://parkpictures.tistory.com/783"
+        },
+        {
+            "blogname": "Raycat : Photo and Story",
+            "contents": "애플 주요 디바이스에 대한 발표가 있는 행사이기도 하지만 이번 행사에서 하드웨어 제품군의 발표없이 각 디바이스의 OS에 대한 이야기가 주를 이루었는데 <b>ios</b>15, 맥 OS 몬테레이, ipados 15, watchos 8이 어떻게 바뀔지 보여주는 행사였다고 이야기 할 수 있습니다. 그리고 하반기에 출시될 아이폰13이나 애플워치...",
+            "datetime": "2021-06-11T06:30:18.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/wwGXXNOfcv",
+            "title": "WWDC 2021 애플 키노트 맥 OS 부터 <b>ios</b>15까지의 변화",
+            "url": "http://raycat.net/5339"
+        },
+        {
+            "blogname": "고양이를 사랑하는 iOS developer",
+            "contents": "이 포스팅은 kxcoding의 &#39;Mastering <b>iOS</b>&#39; 강의를 참고하여 작성하였습니다. 안녕하세요 bannavi입니다^ㅅ^ 오늘은 드디어 <b>iOS</b>강의 첫 시간인데요 저같은 경우, 프로젝트를 다뤄본 경험이 있기때문에 용어 설명을 위주로(ex. 아 요것을 library라고 하는구나!) 포스팅을 하려고합니다. 조금의 도움이라도 됐다면 구독...",
+            "datetime": "2021-06-21T18:45:49.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/KdOofN8QSNQ",
+            "title": "[Swift] <b>iOS</b>의 기본을 다져봅시다.(feat. xcode)",
+            "url": "http://bannavi.tistory.com/236"
+        },
+        {
+            "blogname": "IV Team Devlog",
+            "contents": "본격적으로 tflite - <b>ios</b> tutorial 을 해보자. 본 포스트는 다음의 공식 tutorial code와 설명을 참고하여 만들어졌다. tflite-<b>ios</b> tutorial github link 2편까지는 공식 튜토리얼을 따라하며 감을 익혀보려한다. 튜토리얼을 원할하게 진행하기 위해서 해당 레포를 clone하고 시작하면 좋을 것 같다. tflite에 대한 설명...",
+            "datetime": "2021-06-22T01:18:00.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/CH69R5Sk1k7",
+            "title": "본격적인 tutorial, TensorflowLite - <b>ios</b> tutorial [2]",
+            "url": "http://ivdevlog.tistory.com/7"
+        },
+        {
+            "blogname": "쿤즈랜드",
+            "contents": "이번 행사에서는 기대하는 점은 새로운 OS들과 여러 제품들이 나올 것이 기대가 많았지만 아쉽게도 제품은 등장하지 않았습니다. 다만 새로운 버전의 <b>iOS</b>, iPadOS, macOS, watchOS가 등장했습니다. 우선 이번 <b>iOS</b>15는 어떤 부분들이 변화가 되었는지 알아볼게요. 팬데믹 시대의 라이프 스타일 반영. 업그레이드 된...",
+            "datetime": "2021-06-09T12:58:54.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/HMz3NGNSTfD",
+            "title": "[Apple] WWDC 2021! 새로운 <b>iOS</b> 15 등장. 달라진 점은?",
+            "url": "http://koonsland.tistory.com/177"
+        },
+        {
+            "blogname": "developer_note",
+            "contents": "개발환경 MacOS Big Sur 11.2.3 Xcode version 12.5 <b>iOS</b>로 FCM 푸싱 알림을 하기 위해서는 CocoaPods을 설치해야 합니다. CocoaPods 설치가 아직이라면 아래 링크를 참고 부탁드립니다. https://like-a-drizzle.tistory.com/123?category=868711 07. [<b>iOS</b>/Swift] CocoaPods과 Pod install 방법 CocoaPods 이란...",
+            "datetime": "2021-06-14T14:14:21.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/FQycBOb5YYt",
+            "title": "10. [<b>iOS</b>/Swift] FCM Push Notification 푸싱 알림 연동 하기",
+            "url": "http://like-a-drizzle.tistory.com/127"
+        },
+        {
+            "blogname": "IT 이야기 다루는 잇츠미(IT's me)",
+            "contents": "<b>iOS</b> 15가 이번 WWDC에서 발표되었습니다. 작년 <b>iOS</b> 14의 위젯이 생겨난 것 만큼의 드라마틱한 변화는 없지만, 그래도 몇 가지 소소한 긍정적인 변화들이 있기 때문에 그 변화들과 함께 베타 업데이트를 하는 방법에 대해 알아보도록 하겠습니다. <b>iOS</b> 15 베타 업데이트 출시! 이번엔 소소한 변화 <b>iOS</b> 14 출시했을 때 많은...",
+            "datetime": "2021-06-17T21:03:52.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/84iOTfy0NHM",
+            "title": "<b>iOS</b> 15 베타 업데이트 출시. 변화점과 업데이트 방법 알아보기",
+            "url": "http://sjy-itsme.tistory.com/500"
+        },
+        {
+            "blogname": "학사 나부랭이",
+            "contents": "권한을 부여할 수 있게 해요. 그리고 앱끼리 문서나 음악, 사진 등을 전송하는 것을 시스템 API에서 기능을 제공하는 경우에만 사용 가능하죠. 그러나... <b>iOS</b> 11에서 서드파티 앱도 연동해 사용할 수 있고, 검색, 정렬 등 다양한 기능을 갖고 있는 Files 앱이 등장했어요. 그리고 iCloud와 연동되어서 휴대폰으로 Mac의...",
+            "datetime": "2021-06-03T01:35:41.000+09:00",
+            "thumbnail": "https://search4.kakaocdn.net/argon/130x130_85_c/DuIfiDBWdrq",
+            "title": "<b>iOS</b> - Sandbox, Container Directory",
+            "url": "http://p1atinum.tistory.com/73"
+        },
+        {
+            "blogname": "크리에이터K.",
+            "contents": "5대 5 팀 전략 게임인 AOS 장르라고 발표했습니다. - 닌텐도 스위치 7월, 스마트폰 9월 예정 발매 날짜는 닌텐도 스위치 먼저 7월에 출시, 안드로이드, <b>iOS</b>를 대응하는 스마트폰 버전은 9월에 출시될 예정입니다. 앞서 &#39;포켓몬 고&#39;의 성공했던 경험을 토대로 한번 더 모바일 시장에 도전하는 닌텐도인데 모바일 AOS로...",
+            "datetime": "2021-06-21T18:23:10.000+09:00",
+            "thumbnail": "",
+            "title": "[포켓몬 유나이트] 안드로이드 ・ <b>iOS</b> 9월 출시! (포켓몬 롤?)",
+            "url": "http://kwak4546.tistory.com/86"
+        },
+        {
+            "blogname": "Learn & Run 👟",
+            "contents": "같이 입력하셔서 라이브러리를 만들어주세요! pod lib create 원하는이름 이렇게 하면 총 5가지 질문이 나올거에요. 1. 어떤 플랫폼을 사용하거니? <b>iOS</b> /macOS -&gt; <b>iOS</b> 2. 어떤 언어를 사용할거니? Swift/Objc -&gt; Swift 3. 너 데모앱 포함할거야? -&gt; Yes 4. 테스트는 뭘로 할거야? Quick/None -&gt; None 5. 뷰 기반으로...",
+            "datetime": "2021-05-30T18:28:04.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/9bI5DtYq9W2",
+            "title": "[<b>iOS</b>] 나만의 라이브러리 만들기(feat. CocoaPods)",
+            "url": "http://fomaios.tistory.com/505"
+        },
+        {
+            "blogname": "Haena IT",
+            "contents": "Xcode 설치 드디어 시작합니다! <b>iOS</b> 애플리케이션 개발을 위한 필수품, Xcode 준비하셨나요? 혹시 아직 설치하지 않으셨다면 아래 링크에 들어가 설치해주세요! Xcode on the Mac App Store https://itunes.apple.com Xcode 다운로드 프로젝트 생성 첫번째 프로젝트인 음원 재생기 프로젝트를 생성해보도록 하겠습니다...",
+            "datetime": "2021-06-16T15:21:24.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/2blnyEpaLFP",
+            "title": "[<b>iOS</b>][BoostCourse] Xcode 설치 및 실행/ Xcode 구성",
+            "url": "http://haena.tistory.com/6"
+        },
+        {
+            "blogname": "Erorr0918'S IT BLOG",
+            "contents": "시작하며 지난 글에서는 <b>iOS</b> 15 개발자 베타를 받는 법을 알려드렸는데요, 오늘을 그렇게 받은 <b>iOS</b> 15의 신기능을 알려드리도록 하겠습니다. 변경 사항 1. UI 변화 좌 : <b>iOS</b> 14.7, 우 : <b>iOS</b> 15 전체적인 UI가 둥글게 변화하였습니다. (어디서 봤는데) 2.알림 변화 알림 아이콘이 커졌습니다. (어디서 봤는데) 3. 날씨 앱...",
+            "datetime": "2021-06-16T16:00:00.000+09:00",
+            "thumbnail": "https://search3.kakaocdn.net/argon/130x130_85_c/26d9DSXitLa",
+            "title": "<b>iOS</b> 15 개발자 베타 사용기",
+            "url": "http://blog.naver.com/error050918/222400255490"
+        },
+        {
+            "blogname": "김게스의 ITview",
+            "contents": "2시 온라인으로 공개되었습니다. 이번, WWDC는 새로 공개되는 하드웨어 없이 소프트웨어만을 중점적으로 보여주었습니다. 이번 글은, 애플 아이폰의 핵심인 <b>iOS</b>15의 바뀔 점들 중 중요한 점들을 차례로 알려드리겠습니다. 1. FaceTime 기능 개선 이번 <b>iOS</b>15 업데이트의 가장 핵심으로 내세운 기능은 FaceTime 기능입니다...",
+            "datetime": "2021-06-15T13:00:17.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/9NlMGgpRQAr",
+            "title": "[애플]WWDC 2021, <b>iOS</b>15 프리뷰",
+            "url": "http://gimguess.tistory.com/38"
+        },
+        {
+            "blogname": "코딩하는 지니",
+            "contents": "이전글 &gt;&gt;&gt; 2021.04.28 - [<b>iOS</b>] - [<b>iOS</b>] 현상금 앱 만들기 (2): Table View [<b>iOS</b>] 현상금 앱 만들기 (2): Table View Table View 여러 아이템을 리스트 형태로 보여주고 싶을때 사용한다. Table View를 View Controller에 추가해서 사용한다. Table View는 데이터를 보여주기전에 질문을하는데 * 테이블뷰 셀 몇 개...",
+            "datetime": "2021-05-01T20:27:29.000+09:00",
+            "thumbnail": "https://search1.kakaocdn.net/argon/130x130_85_c/40dkn50B5vu",
+            "title": "[<b>iOS</b>] 현상금 앱 만들기 (3) : Table View",
+            "url": "http://jiinheo.tistory.com/41"
+        },
+        {
+            "blogname": "Phomolog",
+            "contents": "최근부터 온라인 스트리밍도 함께 하였는데 오늘도 실시간으로 스트리밍 시청 후 이벤트를 정리해보네요. source - Apple WWDC 21 Video 오늘 컨퍼런스에서는 <b>iOS</b> 15와 아이패드OS 15, 워치OS8 그리고 맥OS가 새롭게 공개되었습니다. 하나하나 이번 OS들의 특장점에 대해서 알아보도록 하죠. source - Apple WWDC 21...",
+            "datetime": "2021-06-08T04:25:40.000+09:00",
+            "thumbnail": "https://search2.kakaocdn.net/argon/130x130_85_c/3CywUxUUuoB",
+            "title": "WWDC 2021 발표 요약정리 - <b>iOS</b>15 아이패드OS macOS 업데이트",
+            "url": "http://phomolog.tistory.com/121"
+        },
+        {
+            "blogname": "it  블로그",
+            "contents": "미국 시각 26일 오전 10시 한국 시간 27일 새벽 2시 정식 출시 업데이트 파일 용량은 <b>iOS</b> 14.5는 4.41GB, :업데이트 내용: Apple Watch로 iPhone 잠금 해제 얼굴에 마스크를 착용한 상태로 Face ID를 사용할 때, Apple Watch Series 3 및 이후 모델로 iPhone X 및 이후 모델을 잠금 해제하는 기능 아이폰에 연결된 애플...",
+            "datetime": "2021-04-27T10:24:17.000+09:00",
+            "thumbnail": "https://search2.kakaocdn.net/argon/130x130_85_c/4E1nC8qbqgf",
+            "title": "<b>ios</b>14.5 정리",
+            "url": "http://dm-dt-or-youtuber-dongdongtech.tistory.com/2"
+        },
+        {
+            "blogname": "문과생의 IT 이야기",
+            "contents": "2021년도의 WWDC도 무사히 끝나고 언제나 그렇듯 신규 <b>iOS</b>의 베타버전이 공개됐다. 아직 Public Beta가 아닌 개발자 버전이지만 최근에는 프로파일로 관리가 되면서 개발자가 아닌 사람들도 업데이트가 가능하여 이용하는 사람이 꽤 되는 것 같다. 다만 베타버전의 OS는 이용 중 문제 발생의 소지가 다분하며, 이러한...",
+            "datetime": "2021-06-16T07:57:00.000+09:00",
+            "thumbnail": "",
+            "title": "<b>iOS</b> 15 beta1 변경사항(Developer)",
+            "url": "http://airless86.tistory.com/163"
+        },
+        {
+            "blogname": "BOID",
+            "contents": "part별로 나누어서 앱 개발을 하고 있는데 여러 UI 기능을 구현을 하다. SearchBar을 처음 구현을 해봤는데 이것을 정리하면 좋을꺼 같아 글을 적게 되었습니다. <b>iOS</b>에서 SearchBar을 구현하는 방법은 2가지가 있습니다. UISearchBar UISearchController UISearchBar 애플 문서에서는 사용자로부터 검색 연관된 정보를...",
+            "datetime": "2021-06-01T21:36:36.000+09:00",
+            "thumbnail": "",
+            "title": "[<b>iOS</b>] UISearchController에 대해 - HoonIOS",
+            "url": "http://boidevelop.tistory.com/110"
+        },
+        {
+            "blogname": "이것 저것 그리고 IT(그것)...",
+            "contents": "애플이 어제자로 <b>iOS</b> 15를 공개했습니다. 많은 사람들의 관심이 쏠렸습니다. 그렇다면 어떤 점들이 바뀌었는지 확인해봐야겠죠? 첫 번째 페이스타임 (FaceTime) <b>iOS</b> 15은 원격근무 수단으로 활용도가 높아진 영상통화 기능인 &#39;페이스타임&#39;의 기능을 대폭 강화했는데요. 말소리를 분리해 또렷이 들려주는 한편 각종 영상...",
+            "datetime": "2021-06-09T17:17:36.000+09:00",
+            "thumbnail": "",
+            "title": "애플 <b>iOS</b> 15 공개 내용! (Feat. 달라진점)",
+            "url": "http://holiday741.tistory.com/316"
+        }
+    ],
+    "meta": {
+        "is_end": false,
+        "pageable_count": 798,
+        "total_count": 599991
+    }
+}

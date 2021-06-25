@@ -30,8 +30,21 @@ protocol SearchServiceType {
 }
 
 final class SearchService: BaseService, SearchServiceType {
-    private var network: Network<KakaoAPI> = Network(plugins: [RequestLoggingPlugin()])
     
+    private var network: Network<KakaoAPI>
+    
+    init(
+        provider: ServiceProviderType,
+        isStub: Bool
+    ) {
+        self.network = Network(plugins: [RequestLoggingPlugin()], isStub: isStub)
+        super.init(provider: provider)
+    }
+    
+    override convenience init(provider: ServiceProviderType) {
+        self.init(provider: provider, isStub: false)
+    }
+
     var searchHistories: [String]? {
         return self.provider.userDefaultService.value(object: [String].self, forKey: "SearchHistory")
     }

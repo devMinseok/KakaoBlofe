@@ -9,11 +9,18 @@ import RxSwift
 import Moya
 
 class Network<API: TargetType>: MoyaProvider<API> {
-    init(plugins: [PluginType] = []) {
+    init(
+        plugins: [PluginType] = [],
+        isStub: Bool
+    ) {
         let session = MoyaProvider<API>.defaultAlamofireSession()
         session.sessionConfiguration.timeoutIntervalForRequest = 10
         
-        super.init(session: session, plugins: plugins)
+        if isStub {
+            super.init(stubClosure: Self.immediatelyStub, session: session, plugins: plugins)
+        } else {
+            super.init(session: session, plugins: plugins)
+        }
     }
     
     func request(_ api: API) -> Single<Response> {
@@ -29,5 +36,6 @@ extension Network {
         decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
         return request(target)
             .map(T.self, using: decoder)
+            .debug("List")
     }
 }

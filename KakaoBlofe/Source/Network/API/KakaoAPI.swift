@@ -68,4 +68,13 @@ extension KakaoAPI: BaseAPI {
             return .requestPlain
         }
     }
+    
+    var sampleData: Data {
+        switch self {
+        case .searchBlog:
+            return Bundle.jsonData(name: "BlogPosts")
+        case .searchCafe:
+            return Bundle.jsonData(name: "CafePosts")
+        }
+    }
 }
