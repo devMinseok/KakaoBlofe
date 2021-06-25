@@ -228,7 +228,7 @@
 			children = (
 				F2EC7EBA26803BA600ADBF85 /* Info.plist */,
 				F2FB3CBE2685752D0069A400 /* Stub */,
-				F2FB3CB9268568D20069A400 /* ViewController */,
+				F2FB3CC62685E7EA0069A400 /* Tests */,
 			);
 			path = KakaoBlofeTests;
 			sourceTree = "<group>";
@@ -309,7 +309,6 @@
 				F2EC7EFA26806F7900ADBF85 /* Network.swift */,
 				F2EC7EEF26806B9500ADBF85 /* API */,
 				F2EC7EF026806BB900ADBF85 /* Plugin */,
-				F2FB3CB2268564750069A400 /* MockJson */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -397,17 +396,10 @@
 			path = MockJson;
 			sourceTree = "<group>";
 		};
-		F2FB3CB9268568D20069A400 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F2FB3CBC2685694A0069A400 /* HomeViewReactorTests.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		F2FB3CBE2685752D0069A400 /* Stub */ = {
 			isa = PBXGroup;
 			children = (
+				F2FB3CB2268564750069A400 /* MockJson */,
 				F2FB3CBF268575320069A400 /* Service */,
 			);
 			path = Stub;
@@ -420,6 +412,14 @@
 				F2FB3CC2268590120069A400 /* StubUserDefaultService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F2FB3CC62685E7EA0069A400 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F2FB3CBC2685694A0069A400 /* HomeViewReactorTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
