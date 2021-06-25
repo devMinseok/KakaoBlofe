@@ -15,7 +15,6 @@ target 'KakaoBlofe' do
   pod 'RxSwift', '5.1.1'
   pod 'RxCocoa', '5.1.1'
   pod 'RxViewController'
-  pod 'RxOptional'
   pod 'RxGesture'
   pod 'RxFlow'
   
@@ -29,9 +28,9 @@ target 'KakaoBlofe' do
 
   target 'KakaoBlofeTests' do
     inherit! :search_paths
-    pod 'Quick'
     pod 'Nimble'
-    pod 'Stubber'
+    pod 'RxTest'
+    pod 'RxExpect'
   end
 
   target 'KakaoBlofeUITests' do
